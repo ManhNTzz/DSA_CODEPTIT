@@ -17,24 +17,20 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		string s;
 		cin >> s;
 		int l = s.len;
-		FOD(i, 0, l - 1)
-		{
+		FOD(i, 0, l - 1){
 			if (s[i] == '1')
 				s[i] = '0';
-			else
-			{
+			else{
 				s[i] = '1';
 				break;
 			}
