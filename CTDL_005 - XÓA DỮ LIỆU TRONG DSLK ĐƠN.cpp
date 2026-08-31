@@ -13,28 +13,24 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int n;
 	cin >> n;
 	int a[n];
-	REP(i, n)
-	{
+	REP(i, n){
 		cin >> a[i];
 	}
 	int x;
 	cin >> x;
 	vector<int> b;
-	REP(i, n)
-	{
+	REP(i, n){
 		if (a[i] != x)
 			b.push_back(a[i]);
 	}
 	for (auto x : b)
 		cout << x << " ";
-
 	return 0;
 }
