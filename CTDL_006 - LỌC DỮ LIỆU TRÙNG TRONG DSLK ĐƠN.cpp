@@ -13,8 +13,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
@@ -23,17 +22,14 @@ int main()
 	int a[n];
 	unordered_map<int, int> v;
 	vector<int> b;
-	REP(i, n)
-	{
+	REP(i, n){
 		cin >> a[i];
-		if (v[a[i]] == 0)
-		{
+		if (v[a[i]] == 0){
 			b.push_back(a[i]);
 		}
 		v[a[i]]++;
 	}
 	for (auto x : b)
 		cout << x << " ";
-
 	return 0;
 }
