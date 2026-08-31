@@ -13,33 +13,28 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		int n, k;
 		cin >> n >> k;
 		int a[k + 1];
 		FOR(i, 1, k)
 		cin >> a[i];
 		int t = k;
-		while (t > 0 && a[t] == n - k + t)
-			t--;
-		if (t == 0)
-		{
+		while (t > 0 && a[t] == n - k + t) t--;
+		if (t == 0){
 			for (int i = 1; i <= k; ++i)
 				cout << i << " ";
 			cout << endl;
 			continue;
 		}
 		a[t]++;
-		for (int i = t + 1; i <= k; ++i)
-		{
+		for (int i = t + 1; i <= k; ++i){
 			a[i] = a[t] + i - t;
 		}
 		FOR(i, 1, k)
