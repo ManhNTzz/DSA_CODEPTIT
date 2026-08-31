@@ -20,18 +20,14 @@ const int INF = 1e9;
 vector<int> a, b;
 int n, k;
 int ans = 0;
-void Try(int i)
-{
-	FOR(j, 0, 1)
-	{
+void Try(int i){
+	FOR(j, 0, 1){
 		b[i] = j;
-		if (i == n)
-		{
+		if (i == n){
 			int sum = 0;
 			FOR(i, 1, n)
 			sum += a[i] * b[i];
-			if (sum == k)
-			{
+			if (sum == k){
 				ans++;
 				FOR(i, 1, n)
 				if (b[i])
@@ -43,8 +39,7 @@ void Try(int i)
 			Try(i + 1);
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
