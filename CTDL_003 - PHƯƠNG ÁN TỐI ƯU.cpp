@@ -14,8 +14,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	int N, W;
@@ -28,13 +27,10 @@ int main()
 	for (int i = 1; i <= N; i++)
 		cin >> a[i];
 	vector<vector<long long>> dp(N + 1, vector<long long>(W + 1, 0));
-	for (int i = 1; i <= N; i++)
-	{
-		for (int w = 0; w <= W; w++)
-		{
+	for (int i = 1; i <= N; i++){
+		for (int w = 0; w <= W; w++){
 			dp[i][w] = dp[i - 1][w];
-			if (a[i] <= w)
-			{
+			if (a[i] <= w){
 				dp[i][w] = max(dp[i][w], dp[i - 1][w - a[i]] + c[i]);
 			}
 		}
@@ -42,16 +38,13 @@ int main()
 	cout << dp[N][W] << endl;
 	vector<int> x(N + 1, 0);
 	int current_w = W;
-	for (int i = N; i >= 1; i--)
-	{
-		if (dp[i][current_w] != dp[i - 1][current_w])
-		{
+	for (int i = N; i >= 1; i--){
+		if (dp[i][current_w] != dp[i - 1][current_w]){
 			x[i] = 1;
 			current_w -= a[i];
 		}
 	}
-	for (int i = 1; i <= N; i++)
-	{
+	for (int i = 1; i <= N; i++){
 		cout << x[i] << (i == N ? "" : " ");
 	}
 	cout << endl;
