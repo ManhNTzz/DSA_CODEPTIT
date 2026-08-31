@@ -21,29 +21,22 @@ vector<char> a;
 set<string> res;
 int n, k;
 int cnt = 0;
-void Try(int i)
-{
-	if (i > n)
-	{
+void Try(int i){
+	if (i > n){
 		int dem = 0;
 		int ok = 0;
-		FOR(i, 1, n)
-		{
-			if (a[i] == 'A')
-			{
+		FOR(i, 1, n){
+			if (a[i] == 'A'){
 				dem++;
-				if (dem > k)
-					return;
-				if (dem == k)
-				{
+				if (dem > k) return;
+				if (dem == k){
 					ok = 1;
 				}
 			}
 			else
 				dem = 0;
 		}
-		if (ok)
-		{
+		if (ok){
 			cnt++;
 			string c = "";
 			FOR(i, 1, n)
@@ -52,14 +45,12 @@ void Try(int i)
 		}
 		return;
 	}
-	for (char c = 'A'; c <= 'B'; c++)
-	{
+	for (char c = 'A'; c <= 'B'; c++){
 		a[i] = c;
 		Try(i + 1);
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
@@ -69,6 +60,5 @@ int main()
 	cout << cnt << endl;
 	for (auto x : res)
 		cout << x << endl;
-
 	return 0;
 }
