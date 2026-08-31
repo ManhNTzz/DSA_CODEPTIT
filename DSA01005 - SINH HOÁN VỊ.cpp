@@ -20,16 +20,12 @@ const int INF = 1e9;
 int a[105];
 int n;
 bool vs[105];
-void Try(int i)
-{
-	FOR(j, 1, n)
-	{
-		if (!vs[j])
-		{
+void Try(int i){
+	FOR(j, 1, n){
+		if (!vs[j]){
 			vs[j] = true;
 			a[i] = j;
-			if (i == n)
-			{
+			if (i == n){
 				FOR(i, 1, n)
 				cout << a[i];
 				cout << " ";
@@ -40,15 +36,13 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		cin >> n;
 		memset(vs, false, sizeof(vs));
 		Try(1);
