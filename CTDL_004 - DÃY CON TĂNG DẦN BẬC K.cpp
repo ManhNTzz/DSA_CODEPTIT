@@ -15,17 +15,14 @@ using namespace std;
 
 vector<int> a, b, c;
 int n, k, ans = 0;
-void solve()
-{
+void solve(){
 	vector<int> tmp = c;
 	sort(ALL(tmp));
 	if (tmp == c)
 		ans++;
 }
-void Try(int i)
-{
-	for (int j = b[i - 1] + 1; j <= n - k + i; ++j)
-	{
+void Try(int i){
+	for (int j = b[i - 1] + 1; j <= n - k + i; ++j){
 		b[i] = j;
 		c[i] = a[b[i]];
 		if (i == k)
@@ -34,8 +31,7 @@ void Try(int i)
 			Try(i + 1);
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
