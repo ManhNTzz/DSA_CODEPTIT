@@ -17,22 +17,19 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		vector<string> s;
 		s.pb("0");
 		s.pb("1");
-		FOR(c, 2, n)
-		{
+		FOR(c, 2, n){
 			int l = s.size();
 			FOD(i, 0, l - 1)
 			s.pb(s[i]);
