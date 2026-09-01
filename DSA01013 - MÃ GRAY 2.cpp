@@ -15,21 +15,18 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		string s;
 		cin >> s;
 		string v = "";
 		v.push_back(s[0]);
-		for (int i = 1; i < s.len; ++i)
-		{
+		for (int i = 1; i < s.len; ++i){
 			if (s[i] != v.back())
 				v.push_back('1');
 			else
