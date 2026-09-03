@@ -13,26 +13,21 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		string s;
 		cin >> s;
 		int j = s.len;
-		FOD(i, 0, j - 1)
-		{
-			if (s[i] == '0')
-			{
+		FOD(i, 0, j - 1){
+			if (s[i] == '0'){
 				s[i] = '1';
 			}
-			else
-			{
+			else{
 				s[i] = '0';
 				break;
 			}
