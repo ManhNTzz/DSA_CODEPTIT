@@ -19,10 +19,8 @@ const int INF = 1e9;
 
 char a[105];
 int n;
-void Try(int i)
-{
-	if (i > n)
-	{
+void Try(int i){
+	if (i > n){
 		if (a[1] != 'H' || a[n] != 'A')
 			return;
 		FOR(i, 1, n - 1)
@@ -33,21 +31,18 @@ void Try(int i)
 		cout << endl;
 		return;
 	}
-	for (char c = 'A'; c <= 'H'; c += 7)
-	{
+	for (char c = 'A'; c <= 'H'; c += 7){
 		a[i] = c;
 		Try(i + 1);
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		cin >> n;
 		Try(1);
 		cout << endl;
