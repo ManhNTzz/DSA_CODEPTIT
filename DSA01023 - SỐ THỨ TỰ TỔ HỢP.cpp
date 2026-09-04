@@ -20,18 +20,14 @@ const int INF = 1e9;
 int a[105], b[105];
 int n, k;
 int cnt = 0;
-void Try(int i)
-{
-    for (int j = a[i - 1] + 1; j <= n - k + i; j++)
-    {
+void Try(int i){
+    for (int j = a[i - 1] + 1; j <= n - k + i; j++){
         a[i] = j;
-        if (i == k)
-        {
+        if (i == k){
             cnt++;
             int ok = 0;
             FOR(i, 1, k)
-            if (a[i] != b[i])
-            {
+            if (a[i] != b[i]){
                 ok = 1;
                 break;
             }
@@ -42,15 +38,13 @@ void Try(int i)
             Try(i + 1);
     }
 }
-int main()
-{
+int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--){
         cin >> n >> k;
         FOR(i, 1, k)
         cin >> b[i];
