@@ -14,36 +14,31 @@ using namespace std;
 // Cre by ManhNTzz
 
 int n, k, a[100];
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--){
 		cin >> n >> k;
 		unordered_map<int, int> v;
 		int ans = 0;
-		FOR(i, 1, k)
-		{
+		FOR(i, 1, k){
 			cin >> a[i];
 			v[a[i]]++;
 		}
 		int t = k;
 		while (t > 0 && a[t] == n - k + t)
 			t--;
-		if (t == 0)
-		{
+		if (t == 0){
 			cout << k << endl;
 			continue;
 		}
 		a[t]++;
 		for (int i = t + 1; i <= k; ++i)
 			a[i] = a[t] + i - t;
-		FOR(i, 1, k)
-		{
+		FOR(i, 1, k){
 			if (v[a[i]] == 0)
 				ans++;
 		}
