@@ -21,22 +21,16 @@ int n;
 int a[105], b[105];
 bool vs[105];
 int dem;
-void Try(int i)
-{
-    FOR(j, 1, n)
-    {
-        if (!vs[j])
-        {
+void Try(int i){
+    FOR(j, 1, n){
+        if (!vs[j]){
             vs[j] = true;
             a[i] = j;
-            if (i == n)
-            {
+            if (i == n){
                 dem++;
                 int ok = 0;
-                FOR(i, 1, n)
-                {
-                    if (a[i] != b[i])
-                    {
+                FOR(i, 1, n){
+                    if (a[i] != b[i]){
                         ok = 1;
                         break;
                     }
@@ -50,15 +44,13 @@ void Try(int i)
         }
     }
 }
-int main()
-{
+int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--){
         cin >> n;
         memset(vs, false, sizeof(vs));
         memset(b, 0, sizeof(b));
