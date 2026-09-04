@@ -21,13 +21,10 @@ string a[105];
 set<string> res;
 int b[105];
 int n, k;
-void Try(int i)
-{
-	for (int j = b[i - 1] + 1; j <= n - k + i; j++)
-	{
+void Try(int i){
+	for (int j = b[i - 1] + 1; j <= n - k + i; j++){
 		b[i] = j;
-		if (i == k)
-		{
+		if (i == k){
 			FOR(i, 1, k)
 			cout << a[b[i]] << " ";
 			cout << endl;
@@ -36,14 +33,12 @@ void Try(int i)
 			Try(i + 1);
 	}
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> n >> k;
-	FOR(i, 1, n)
-	{
+	FOR(i, 1, n){
 		string s;
 		cin >> s;
 		res.insert(s);
