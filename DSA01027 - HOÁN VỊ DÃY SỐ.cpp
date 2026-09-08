@@ -21,16 +21,12 @@ int n;
 set<int> res;
 int a[105], b[105];
 bool vs[105];
-void Try(int i)
-{
-    FOR(j, 1, n)
-    {
-        if (!vs[j])
-        {
+void Try(int i) {
+    FOR(j, 1, n) {
+        if (!vs[j]) {
             vs[j] = true;
             b[i] = j;
-            if (i == n)
-            {
+            if (i == n) {
                 FOR(i, 1, n)
                 cout << a[b[i]] << " ";
                 cout << endl;
@@ -41,14 +37,12 @@ void Try(int i)
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     cin >> n;
-    FOR(i, 1, n)
-    {
+    FOR(i, 1, n) {
         int x;
         cin >> x;
         res.insert(x);
