@@ -20,13 +20,10 @@ const int INF = 1e9;
 int a[105], b[105];
 set<int> res;
 int n, k;
-void Try(int i)
-{
-	for (int j = b[i - 1] + 1; j <= n - k + i; j++)
-	{
+void Try(int i) {
+	for (int j = b[i - 1] + 1; j <= n - k + i; j++) {
 		b[i] = j;
-		if (i == k)
-		{
+		if (i == k) {
 			FOR(i, 1, k)
 			cout << a[b[i]] << " ";
 			cout << endl;
@@ -35,21 +32,18 @@ void Try(int i)
 			Try(i + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> n >> k;
-	REP(i, n)
-	{
+	REP(i, n) {
 		int x;
 		cin >> x;
 		res.insert(x);
 	}
 	int cnt = 1;
-	for (auto x : res)
-	{
+	for (auto x : res) {
 		a[cnt++] = x;
 	}
 	n = cnt - 1;
