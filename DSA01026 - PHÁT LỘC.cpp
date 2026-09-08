@@ -19,10 +19,8 @@ const int INF = 1e9;
 
 int a[105];
 int n;
-void Try(int i)
-{
-	if (i > n)
-	{
+void Try(int i) {
+	if (i > n) {
 		if (a[1] == 6 || a[n] == 8)
 			return;
 		FOR(i, 1, n - 1)
@@ -36,14 +34,12 @@ void Try(int i)
 		cout << endl;
 		return;
 	}
-	for (int c = 6; c <= 8; c += 2)
-	{
+	for (int c = 6; c <= 8; c += 2) {
 		a[i] = c;
 		Try(i + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
