@@ -15,17 +15,14 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-bool isValid(string s)
-{
+bool isValid(string s) {
     if (s.size() < 2)
         return false;
     int bal = 0;
-    for (char c : s)
-    {
+    for (char c : s) {
         if (c == '(')
             bal++;
-        else if (c == ')')
-        {
+        else if (c == ')') {
             if (bal == 0)
                 return false;
             bal--;
@@ -34,12 +31,10 @@ bool isValid(string s)
     return bal == 0;
 }
 
-int main()
-{
+int main() {
     int tc;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--) {
         string s;
         cin >> s;
 
@@ -52,13 +47,11 @@ int main()
 
         bool found = false;
 
-        while (!q.empty())
-        {
+        while (!q.empty()) {
             string cur = q.front();
             q.pop();
 
-            if (isValid(cur))
-            {
+            if (isValid(cur)) {
                 res.push_back(cur);
                 found = true;
             }
@@ -66,13 +59,10 @@ int main()
             if (found)
                 continue;
 
-            for (int i = 0; i < cur.size(); ++i)
-            {
-                if (!isalpha(cur[i]))
-                {
+            for (int i = 0; i < cur.size(); ++i) {
+                if (!isalpha(cur[i])) {
                     string next = cur.substr(0, i) + cur.substr(i + 1);
-                    if (!visited.count(next))
-                    {
+                    if (!visited.count(next)) {
                         visited.insert(next);
                         q.push(next);
                     }
@@ -82,8 +72,7 @@ int main()
 
         if (res.empty())
             cout << "-1" << endl;
-        else
-        {
+        else {
             sort(res.begin(), res.end());
             res.erase(unique(res.begin(), res.end()), res.end());
             for (auto &t : res)
