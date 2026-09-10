@@ -17,10 +17,8 @@ const long long MOD = 1000000007;
 
 int n, m, ans;
 int a[105][105];
-void Try(int i, int j)
-{
-	if (i == m && j == n)
-	{
+void Try(int i, int j) {
+	if (i == m && j == n) {
 		ans++;
 		return;
 	}
@@ -29,15 +27,13 @@ void Try(int i, int j)
 	if (j < n)
 		Try(i, j + 1);
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> m >> n;
 		ans = 0;
 		FOR(i, 1, m)
