@@ -17,10 +17,8 @@ const long long MOD = 1000000007;
 
 int a[100][100], n;
 vector<string> v;
-void Try(int i, int j, string s)
-{
-	if (i == n && j == n)
-	{
+void Try(int i, int j, string s) {
+	if (i == n && j == n) {
 		v.push_back(s);
 		return;
 	}
@@ -29,28 +27,24 @@ void Try(int i, int j, string s)
 	if (j < n && a[i][j + 1] == 1)
 		Try(i, j + 1, s + 'R');
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n;
 		v.clear();
 		FOR(i, 1, n)
 		FOR(j, 1, n)
 		cin >> a[i][j];
-		if (a[1][1] == 0 || a[n][n] == 0)
-		{
+		if (a[1][1] == 0 || a[n][n] == 0) {
 			cout << -1 << endl;
 			continue;
 		}
 		Try(1, 1, "");
-		if (v.empty())
-		{
+		if (v.empty()) {
 			cout << -1 << endl;
 			continue;
 		}
