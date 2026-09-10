@@ -17,15 +17,13 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		vector<int> a;
@@ -33,11 +31,9 @@ int main()
 		FOR(i, 1, n)
 		cin >> a[i];
 		vector<string> kq;
-		while (n > 0)
-		{
+		while (n > 0) {
 			string s = "[";
-			FOR(i, 1, n)
-			{
+			FOR(i, 1, n) {
 				s += to_string(a[i]);
 				if (i != n)
 					s += " ";
