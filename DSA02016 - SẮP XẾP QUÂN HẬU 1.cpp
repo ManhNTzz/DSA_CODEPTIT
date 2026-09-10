@@ -19,12 +19,9 @@ const int INF = 1e9;
 
 int a[105], b[105], c[105];
 int n, ans;
-void Try(int i)
-{
-    FOR(j, 1, n)
-    {
-        if (!a[j] && !b[i + j - 1] && !c[i - j + n])
-        {
+void Try(int i) {
+    FOR(j, 1, n) {
+        if (!a[j] && !b[i + j - 1] && !c[i - j + n]) {
             a[j] = b[i + j - 1] = c[i - j + n] = 1;
             if (i == n)
                 ans++;
@@ -34,15 +31,13 @@ void Try(int i)
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> n;
         ans = 0;
         Try(1);
