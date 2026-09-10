@@ -6,10 +6,8 @@ using namespace std;
 int n, S, ans;
 vector<int> a;
 
-void Try(int i, int val, int cou)
-{
-	if (i == n || val >= S || cou >= ans)
-	{
+void Try(int i, int val, int cou) {
+	if (i == n || val >= S || cou >= ans) {
 		if (val == S)
 			ans = min(ans, cou);
 		return;
@@ -18,8 +16,7 @@ void Try(int i, int val, int cou)
 	Try(i + 1, val + a[i], cou + 1);
 }
 
-void testCase()
-{
+void testCase() {
 	cin >> n >> S;
 	ans = INT_MAX;
 	a.resize(n);
@@ -29,16 +26,14 @@ void testCase()
 	cout << (ans != INT_MAX ? ans : -1);
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		testCase();
 		cout << "\n";
 	}
