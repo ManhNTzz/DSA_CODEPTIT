@@ -6,17 +6,14 @@ using namespace std;
 int n, k, s, stop;
 int a[25];
 
-void Try(int sum, int cou)
-{
+void Try(int sum, int cou) {
 	if (stop)
 		return;
-	if (cou == k)
-	{
+	if (cou == k) {
 		stop = 1;
 		return;
 	}
-	for (int i = 0; i < n; ++i)
-	{
+	for (int i = 0; i < n; ++i) {
 		if (sum == s)
 			Try(0, cou + 1);
 		else if (sum < s)
@@ -26,17 +23,14 @@ void Try(int sum, int cou)
 	}
 }
 
-void testCase()
-{
+void testCase() {
 	s = 0, stop = 0;
 	cin >> n >> k;
-	for (int i = 0; i < n; ++i)
-	{
+	for (int i = 0; i < n; ++i) {
 		cin >> a[i];
 		s += a[i];
 	}
-	if (s % k != 0)
-	{
+	if (s % k != 0) {
 		cout << 0;
 		return;
 	}
@@ -45,16 +39,14 @@ void testCase()
 	cout << (stop ? 1 : 0);
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while(T--) {
 		testCase();
 		cout << "\n";
 	}
