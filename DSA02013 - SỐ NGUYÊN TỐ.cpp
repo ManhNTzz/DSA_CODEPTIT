@@ -25,16 +25,13 @@ int snt(int n)
 int n, p, s;
 vector<int> prime, a;
 vector<vector<int>> res;
-void Try(int pos, int start, int sum)
-{
-	if (pos == n)
-	{
+void Try(int pos, int start, int sum) {
+	if (pos == n) {
 		if (sum == s)
 			res.push_back(a);
 		return;
 	}
-	for (int i = start; i < prime.size(); ++i)
-	{
+	for (int i = start; i < prime.size(); ++i) {
 		if (sum + prime[i] > s)
 			break;
 		a.push_back(prime[i]);
@@ -42,15 +39,13 @@ void Try(int pos, int start, int sum)
 		a.pop_back();
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> p >> s;
 		a.clear();
 		prime.clear();
@@ -60,8 +55,7 @@ int main()
 				prime.push_back(i);
 		Try(0, 0, 0);
 		cout << res.size() << endl;
-		for (auto v : res)
-		{
+		for (auto v : res) {
 			for (auto x : v)
 				cout << x << " ";
 			cout << endl;
