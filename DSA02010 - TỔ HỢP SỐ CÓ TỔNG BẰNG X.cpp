@@ -18,14 +18,11 @@ const long long mod = 1000000007;
 int n, x;
 vector<int> a, cur;
 bool check;
-void Try(int pos, int sum)
-{
-	if (sum == x)
-	{
+void Try(int pos, int sum) {
+	if (sum == x) {
 		check = true;
 		cout << "[";
-		REP(i, cur.size())
-		{
+		REP(i, cur.size()) {
 			cout << cur[i];
 			if (i < cur.size() - 1)
 				cout << " ";
@@ -33,8 +30,7 @@ void Try(int pos, int sum)
 		cout << "]";
 		return;
 	}
-	for (int i = pos; i < n; ++i)
-	{
+	for (int i = pos; i < n; ++i) {
 		if (sum + a[i] > x)
 			break;
 		cur.push_back(a[i]);
@@ -42,15 +38,13 @@ void Try(int pos, int sum)
 		cur.pop_back();
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> x;
 		a.clear();
 		cur.clear();
