@@ -19,15 +19,12 @@ int n, k;
 int a[15];
 vector<int> cur;
 vector<vector<int>> res;
-void Try(int pos, int sum)
-{
-	if (sum == k)
-	{
+void Try(int pos, int sum) {
+	if (sum == k) {
 		res.push_back(cur);
 		return;
 	}
-	for (int i = pos; i < n; ++i)
-	{
+	for (int i = pos; i < n; ++i) {
 		if (sum + a[i] > k)
 			break;
 		if (i > pos && a[i] == a[i - 1])
@@ -37,15 +34,13 @@ void Try(int pos, int sum)
 		cur.pop_back();
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> k;
 		REP(i, n)
 		cin >> a[i];
@@ -53,18 +48,14 @@ int main()
 		cur.clear();
 		res.clear();
 		Try(0, 0);
-		if (res.empty())
-		{
+		if (res.empty()) {
 			cout << -1 << endl;
 			continue;
 		}
-		else
-		{
-			for (auto x : res)
-			{
+		else {
+			for (auto x : res) {
 				cout << "[";
-				REP(i, (int)x.size())
-				{
+				REP(i, (int)x.size()) {
 					cout << x[i];
 					if (i != (int)x.size() - 1)
 						cout << " ";
