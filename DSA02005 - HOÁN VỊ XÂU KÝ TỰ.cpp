@@ -19,16 +19,12 @@ const int INF = 1e9;
 
 string a, b;
 bool vs[105];
-void Try(int i)
-{
-	REP(j, a.len)
-	{
-		if (!vs[j])
-		{
+void Try(int i) {
+	REP(j, a.len) {
+		if (!vs[j]) {
 			vs[j] = true;
 			b[i] = a[j];
-			if (i == a.len - 1)
-			{
+			if (i == a.len - 1) {
 				cout << b << " ";
 			}
 			else
@@ -37,15 +33,13 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		memset(vs, false, sizeof(vs));
 		cin >> a;
 		sort(ALL(a));
