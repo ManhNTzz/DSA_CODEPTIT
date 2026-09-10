@@ -19,22 +19,17 @@ int n, k;
 vector<vector<int>> a, res;
 vector<int> b;
 vector<bool> used;
-void solve()
-{
+void solve() {
 	int sum = 0;
 	FOR(i, 1, n)
 	sum += a[i][b[i]];
-	if (sum == k)
-	{
+	if (sum == k) {
 		res.push_back(b);
 	}
 }
-void Try(int i)
-{
-	FOR(j, 1, n)
-	{
-		if (used[j])
-		{
+void Try(int i) {
+	FOR(j, 1, n) {
+		if (used[j]) {
 			b[i] = j;
 			used[j] = false;
 			if (i == n)
@@ -45,8 +40,7 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
@@ -62,8 +56,7 @@ int main()
 	res.clear();
 	Try(1);
 	cout << res.size() << endl;
-	for (auto x : res)
-	{
+	for (auto x : res) {
 		FOR(i, 1, n)
 		cout << x[i] << " ";
 		cout << endl;
