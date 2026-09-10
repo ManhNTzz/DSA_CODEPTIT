@@ -15,24 +15,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int k;
 		cin >> k;
 		string s;
 		cin >> s;
 		int cnt = 0;
-		while (k > 0)
-		{
+		while (k > 0) {
 			priority_queue<pair<char, int>> qp;
 			for (int i = cnt; i < s.length(); i++)
 				qp.push({s[i], i});
-			if (!qp.empty() && s[cnt] != qp.top().first)
-			{
+			if (!qp.empty() && s[cnt] != qp.top().first) {
 				int j = qp.top().second;
 				swap(s[cnt], s[j]);
 				k--;
