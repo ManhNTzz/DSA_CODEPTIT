@@ -7,29 +7,24 @@ using namespace std;
 
 vector<vector<int>> res;
 
-void DFS(int i, vector<int> v)
-{
-    if (i == 4)
-    {
+void DFS(int i, vector<int> v) {
+    if (i == 4) {
         res.push_back(v);
         return;
     }
-    for (int j = -1; j <= 1; j++)
-    {
+    for (int j = -1; j <= 1; j++) {
         v.push_back(j);
         DFS(i + 1, v);
         v.pop_back();
     }
 }
 
-int main()
-{
+int main() {
     DFS(0, {});
 
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--0) {
         vector<int> a(5);
         for (int &x : a)
             cin >> x;
@@ -37,21 +32,17 @@ int main()
         sort(a.begin(), a.end());
 
         bool check = false;
-        do
-        {
-            for (auto v : res)
-            {
+        do {
+            for (auto v : res) {
                 int cur = a[0];
-                for (int i = 0; i < 4; i++)
-                {
+                for (int i = 0; i < 4; i++) {
                     if (v[i] == 0)
                         cur *= a[i + 1];
                     else
                         cur += a[i + 1] * v[i];
                 }
 
-                if (cur == 23)
-                {
+                if (cur == 23) {
                     check = true;
                     break;
                 }
