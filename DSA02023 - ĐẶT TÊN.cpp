@@ -16,13 +16,10 @@ using namespace std;
 vector<string> a, b, x;
 set<string> v;
 int n, k;
-void Try(int i, int pos)
-{
-	for (int j = pos; j < (int)b.size(); ++j)
-	{
+void Try(int i, int pos) {
+	for (int j = pos; j < (int)b.size(); ++j) {
 		x[i] = b[j];
-		if (i == k - 1)
-		{
+		if (i == k - 1) {
 			REP(i, k)
 			cout << x[i] << " ";
 			cout << endl;
@@ -31,20 +28,17 @@ void Try(int i, int pos)
 			Try(i + 1, j + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> n >> k;
 	a.resize(n);
-	REP(i, n)
-	{
+	REP(i, n) {
 		cin >> a[i];
 		v.insert(a[i]);
 	}
-	for (auto x : v)
-	{
+	for (auto x : v) {
 		b.push_back(x);
 	}
 	x.resize(k);
