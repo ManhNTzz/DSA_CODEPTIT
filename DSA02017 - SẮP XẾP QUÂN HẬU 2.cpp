@@ -18,17 +18,13 @@ const long long mod = 1000000007;
 int a[8][8];
 int cot[8], cheo1[15], cheo2[15];
 int res, pos;
-void Try(int i)
-{
-	if (i == 8)
-	{
+void Try(int i) {
+	if (i == 8) {
 		res = max(res, pos);
 		return;
 	}
-	for (int j = 0; j < 8; j++)
-	{
-		if (!cot[j] && !cheo1[i - j + 7] && !cheo2[i + j])
-		{
+	for (int j = 0; j < 8; j++) {
+		if (!cot[j] && !cheo1[i - j + 7] && !cheo2[i + j]) {
 			cot[j] = cheo1[i - j + 7] = cheo2[i + j] = 1;
 			pos += a[i][j];
 			Try(i + 1);
@@ -37,15 +33,13 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	FOR(c, 1, T)
-	{
+	FOR(c, 1, T) {
 		REP(i, 8)
 		REP(j, 8)
 		cin >> a[i][j];
