@@ -5,8 +5,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-char Find(ll n, int i, ll dp[], string s)
-{
+char Find(ll n, int i, ll dp[], string s) {
     if (i == 0)
         return s[n - 1];
 
@@ -17,15 +16,13 @@ char Find(ll n, int i, ll dp[], string s)
     return Find(n, i - 1, dp, s);
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
         ll n;
@@ -35,8 +32,7 @@ int main()
         dp[0] = s.size();
 
         int i = 0;
-        while (dp[i] < n)
-        {
+        while (dp[i] < n) {
             dp[i + 1] = dp[i] * 2;
             i++;
         }
