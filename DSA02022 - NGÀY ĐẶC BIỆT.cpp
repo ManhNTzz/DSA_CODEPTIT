@@ -18,18 +18,15 @@ const int INF = 1e9;
 // Cre by ManhNTzz
 
 int a[9];
-void Try(int i)
-{
-	if (i > 8)
-	{
+void Try(int i) {
+	if (i > 8) {
 		if (a[1] * 10 + a[2] == 0)
 			return;
 		if (a[3] * 10 + a[4] == 0 || a[3] * 10 + a[4] > 12)
 			return;
 		if (a[5] != 2)
 			return;
-		FOR(i, 1, 8)
-		{
+		FOR(i, 1, 8) {
 			cout << a[i];
 			if (i == 2)
 				cout << "/";
@@ -39,14 +36,12 @@ void Try(int i)
 		cout << endl;
 		return;
 	}
-	for (int c = 0; c <= 2; c += 2)
-	{
+	for (int c = 0; c <= 2; c += 2) {
 		a[i] = c;
 		Try(i + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
