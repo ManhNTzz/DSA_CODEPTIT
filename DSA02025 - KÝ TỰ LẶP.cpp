@@ -16,17 +16,13 @@ const long long mod = 1000000007;
 int n, ans;
 string a[15], hv[15];
 bool vs[15];
-void Try(int i, int cou)
-{
-	if (i > n)
-	{
+void Try(int i, int cou) {
+	if (i > n) {
 		ans = min(ans, cou);
 		return;
 	}
-	for (int j = 1; j <= n; ++j)
-	{
-		if (!vs[j])
-		{
+	for (int j = 1; j <= n; ++j) {
+		if (!vs[j]) {
 			vs[j] = true;
 			hv[i] = a[j];
 			int dd[127] = {};
@@ -35,8 +31,7 @@ void Try(int i, int cou)
 			for (char c : hv[i - 1])
 				dd[c]++;
 			int dem = 0;
-			for (int i = 'A'; i <= 'Z'; ++i)
-			{
+			for (int i = 'A'; i <= 'Z'; ++i) {
 				if (dd[i] == 2)
 					dem++;
 			}
@@ -47,15 +42,13 @@ void Try(int i, int cou)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	ans = INT_MAX;
 	cin >> n;
-	for (int i = 1; i <= n; ++i)
-	{
+	for (int i = 1; i <= n; ++i) {
 		cin >> a[i];
 	}
 	Try(1, 0);
