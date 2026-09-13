@@ -18,8 +18,7 @@ const long long MOD = 1000000007;
 int n, a[105];
 vector<int> cur;
 vector<vector<int>> res;
-bool cmp(vector<int> a, vector<int> b)
-{
+bool cmp(vector<int> a, vector<int> b) {
 	string x = "", y = "";
 	for (int i : a)
 		x += to_string(i) + " ";
@@ -29,12 +28,9 @@ bool cmp(vector<int> a, vector<int> b)
 	y.pop_back();
 	return x < y;
 }
-void Try(int pos)
-{
-	for (int i = pos; i < n; ++i)
-	{
-		if (cur.empty() || a[i] > cur.back())
-		{
+void Try(int pos) {
+	for (int i = pos; i < n; ++i) {
+		if (cur.empty() || a[i] > cur.back()) {
 			cur.push_back(a[i]);
 			if (cur.size() >= 2)
 				res.push_back(cur);
@@ -43,8 +39,7 @@ void Try(int pos)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
@@ -53,8 +48,7 @@ int main()
 	cin >> a[i];
 	Try(0);
 	sort(ALL(res), cmp);
-	for (auto v : res)
-	{
+	for (auto v : res) {
 		for (auto x : v)
 			cout << x << " ";
 		cout << endl;
