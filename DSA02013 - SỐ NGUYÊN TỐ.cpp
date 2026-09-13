@@ -13,8 +13,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int snt(int n)
-{
+int snt(int n) {
 	if (n < 2)
 		return 0;
 	for (int i = 2; i * i <= n; ++i)
