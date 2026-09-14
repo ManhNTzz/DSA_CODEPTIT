@@ -17,27 +17,20 @@ using namespace std;
 char d;
 vector<char> a, b;
 bool unused[100];
-void Try(int i)
-{
-	for (int j = 0; j < (int)a.size(); ++j)
-	{
-		if (unused[j])
-		{
+void Try(int i) {
+	for (int j = 0; j < (int)a.size(); ++j) {
+		if (unused[j]) {
 			b[i] = a[j];
 			unused[j] = false;
-			if (i == (int)a.size() - 1)
-			{
+			if (i == (int)a.size() - 1) {
 				int ok = 1;
-				for (int c = 0; c < (int)a.size() - 2; ++c)
-				{
-					if ((b[c] != 'A' && b[c] != 'E') && (b[c + 1] == 'A' || b[c + 1] == 'E') && (b[c + 2] != 'A' && b[c + 2] != 'E'))
-					{
+				for (int c = 0; c < (int)a.size() - 2; ++c) {
+					if ((b[c] != 'A' && b[c] != 'E') && (b[c + 1] == 'A' || b[c + 1] == 'E') && (b[c + 2] != 'A' && b[c + 2] != 'E')) {
 						ok = 0;
 						break;
 					}
 				}
-				if (ok == 1)
-				{
+				if (ok == 1) {
 					for (int c = 0; c < (int)a.size(); ++c)
 						cout << b[c];
 					cout << endl;
@@ -49,14 +42,12 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> d;
-	for (char x = 'A'; x <= d; ++x)
-	{
+	for (char x = 'A'; x <= d; ++x) {
 		a.push_back(x);
 	}
 	b.resize(a.size());
