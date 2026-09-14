@@ -13,10 +13,8 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-void hanoi(int n, char A, char B, char C)
-{
-    if (n == 1)
-    {
+void hanoi(int n, char A, char B, char C) {
+    if (n == 1) {
         cout << A << " -> " << C << endl;
         return;
     }
@@ -24,8 +22,7 @@ void hanoi(int n, char A, char B, char C)
     cout << A << " -> " << C << endl;
     hanoi(n - 1, B, A, C);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
