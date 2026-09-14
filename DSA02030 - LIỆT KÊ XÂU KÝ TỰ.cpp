@@ -22,13 +22,10 @@ int k;
 int n;
 char a[105];
 int b[105];
-void Try(int i)
-{
-	for (int j = b[i - 1]; j <= n; j++)
-	{
+void Try(int i) {
+	for (int j = b[i - 1]; j <= n; j++) {
 		b[i] = j;
-		if (i == k)
-		{
+		if (i == k) {
 			FOR(i, 1, k)
 			cout << a[b[i]];
 			cout << endl;
@@ -37,15 +34,13 @@ void Try(int i)
 			Try(i + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	cin >> c >> k;
 	int cnt = 1;
-	for (char x = 'A'; x <= c; x++)
-	{
+	for (char x = 'A'; x <= c; x++) {
 		a[cnt++] = x;
 	}
 	b[0] = 1;
