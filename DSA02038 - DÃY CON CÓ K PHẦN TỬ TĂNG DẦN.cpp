@@ -17,13 +17,10 @@ const long long mod = 1000000007;
 
 int n, k;
 vector<int> a, b;
-void Try(int i, int pos)
-{
-	for (int j = pos; j < (int)a.size(); ++j)
-	{
+void Try(int i, int pos) {
+	for (int j = pos; j < (int)a.size(); ++j) {
 		b[i] = a[j];
-		if (i == k)
-		{
+		if (i == k) {
 			FOR(c, 1, k)
 			cout << b[c] << " ";
 			cout << endl;
@@ -32,15 +29,13 @@ void Try(int i, int pos)
 			Try(i + 1, j + 1);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> k;
 		a.resize(n + 1);
 		FOR(i, 1, n)
