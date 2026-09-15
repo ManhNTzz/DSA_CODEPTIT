@@ -15,15 +15,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		int a[n];
@@ -31,8 +29,7 @@ int main()
 		cin >> a[i];
 		sort(a, a + n);
 		ll sum1 = 0, sum2 = 0;
-		REP(i, n)
-		{
+		REP(i, n) {
 			if (i % 2 == 0)
 				sum1 = sum1 * 10 + a[i];
 			else
