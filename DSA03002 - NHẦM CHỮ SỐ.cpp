@@ -14,8 +14,7 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 string a, b;
-string sum(string a, string b)
-{
+string sum(string a, string b) {
 	int l = max(a.len, b.len);
 	while (a.len < l)
 		a = ' ' + a;
@@ -23,8 +22,7 @@ string sum(string a, string b)
 		b = ' ' + b;
 	string res = "";
 	int nho = 0;
-	FOD(i, 0, l - 1)
-	{
+	FOD(i, 0, l - 1) {
 		int digit = (a[i] - '0') + (b[i] - '0') + nho;
 		nho = digit / 10;
 		res = char(digit % 10 + '0') + res;
@@ -33,22 +31,19 @@ string sum(string a, string b)
 		res = char(nho + '0') + res;
 	return res;
 }
-string chuyen5(string a)
-{
+string chuyen5(string a) {
 	REP(i, a.len)
 	if (a[i] == '5')
 		a[i] = '6';
 	return a;
 }
-string chuyen6(string b)
-{
+string chuyen6(string b) {
 	REP(i, b.len)
 	if (b[i] == '6')
 		b[i] = '5';
 	return b;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
