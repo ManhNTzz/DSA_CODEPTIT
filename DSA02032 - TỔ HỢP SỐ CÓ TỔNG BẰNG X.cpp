@@ -6,17 +6,13 @@ using namespace std;
 int n, x, a[21];
 vector<vector<int>> res;
 
-void Try(int limit, int value, vector<int> v)
-{
-	if (value == x)
-	{
+void Try(int limit, int value, vector<int> v) {
+	if (value == x) {
 		res.push_back(v);
 		return;
 	}
-	for (int i = 1; i <= n; ++i)
-	{
-		if (a[i] >= limit && value + a[i] <= x)
-		{
+	for (int i = 1; i <= n; ++i) {
+		if (a[i] >= limit && value + a[i] <= x) {
 			v.push_back(a[i]);
 			Try(a[i], value + a[i], v);
 			v.pop_back();
@@ -24,26 +20,21 @@ void Try(int limit, int value, vector<int> v)
 	}
 }
 
-void TestCase()
-{
+void TestCase() {
 	res.clear();
 	cin >> n >> x;
-	for (int i = 1; i <= n; ++i)
-	{
+	for (int i = 1; i <= n; ++i) {
 		cin >> a[i];
 	}
 	sort(a + 1, a + 1 + n);
 	Try(1, 0, {});
 	if (res.empty())
 		cout << -1;
-	else
-	{
+	else {
 		cout << res.size() << " ";
-		for (auto v : res)
-		{
+		for (auto v : res) {
 			cout << "{";
-			for (int i = 0; i < v.size() - 1; ++i)
-			{
+			for (int i = 0; i < v.size() - 1; ++i) {
 				cout << v[i] << " ";
 			}
 			cout << v.back() << "} ";
@@ -51,16 +42,14 @@ void TestCase()
 	}
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		TestCase();
 		cout << endl;
 	}
