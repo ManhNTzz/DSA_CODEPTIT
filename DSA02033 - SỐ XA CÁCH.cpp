@@ -17,27 +17,20 @@ using namespace std;
 int n;
 vector<int> a, b;
 bool unused[100];
-void Try(int i)
-{
-	for (int j = 0; j < n; ++j)
-	{
-		if (unused[j])
-		{
+void Try(int i) {
+	for (int j = 0; j < n; ++j) {
+		if (unused[j]) {
 			b[i] = a[j];
 			unused[j] = false;
-			if (i == n - 1)
-			{
+			if (i == n - 1) {
 				int ok = 1;
-				for (int c = 0; c < n - 1; ++c)
-				{
-					if (abs(b[c] - b[c + 1]) == 1)
-					{
+				for (int c = 0; c < n - 1; ++c) {
+					if (abs(b[c] - b[c + 1]) == 1) {
 						ok = 0;
 						break;
 					}
 				}
-				if (ok == 1)
-				{
+				if (ok == 1) {
 					REP(c, n)
 					cout << b[c];
 					cout << endl;
@@ -49,15 +42,13 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n;
 		a.clear();
 		for (int i = 1; i <= n; ++i)
