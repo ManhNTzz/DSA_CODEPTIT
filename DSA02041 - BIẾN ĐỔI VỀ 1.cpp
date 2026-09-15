@@ -3,18 +3,15 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-void testCase()
-{
+void testCase() {
 	int n;
 	cin >> n;
 	queue<pair<int, int>> q;
 	q.push({n, 0});
-	while (true)
-	{
+	while (true) {
 		pair<int, int> p = q.front();
 		q.pop();
-		if (p.first == 1)
-		{
+		if (p.first == 1) {
 			cout << p.second;
 			return;
 		}
@@ -26,16 +23,14 @@ void testCase()
 	}
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		testCase();
 		cout << "\n";
 	}
