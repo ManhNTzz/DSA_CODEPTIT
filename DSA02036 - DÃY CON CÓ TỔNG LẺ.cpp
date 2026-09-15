@@ -16,28 +16,23 @@ const long long mod = 1000000007;
 int n;
 vector<int> a, b;
 vector<vector<int>> res;
-void Try(int start, int sum)
-{
-	if (sum % 2 != 0)
-	{
+void Try(int start, int sum) {
+	if (sum % 2 != 0) {
 		res.push_back(b);
 	}
-	for (int i = start; i < a.size(); ++i)
-	{
+	for (int i = start; i < a.size(); ++i) {
 		b.push_back(a[i]);
 		Try(i + 1, sum + a[i]);
 		b.pop_back();
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		a.clear();
 		b.clear();
 		res.clear();
@@ -48,8 +43,7 @@ int main()
 		sort(ALL(a), greater<int>());
 		Try(0, 0);
 		sort(ALL(res));
-		for (auto v : res)
-		{
+		for (auto v : res) {
 			for (auto x : v)
 				cout << x << " ";
 			cout << endl;
