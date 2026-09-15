@@ -7,20 +7,17 @@ int n;
 vector<int> a, b;
 vector<vector<int>> res;
 
-bool isPrime(int n)
-{
+bool isPrime(int n) {
 	if (n < 2)
 		return false;
-	for (int i = 2; i <= sqrt(n); ++i)
-	{
+	for (int i = 2; i <= sqrt(n); ++i) {
 		if (n % i == 0)
 			return false;
 	}
 	return true;
 }
 
-void solve()
-{
+void solve() {
 	int sum = 0;
 	for (int i : b)
 		sum += i;
@@ -28,10 +25,8 @@ void solve()
 		res.push_back(b);
 }
 
-void Try(int i)
-{
-	for (int j = 0; j <= 1; ++j)
-	{
+void Try(int i) {
+	for (int j = 0; j <= 1; ++j) {
 		if (j == 1)
 			b.push_back(a[i]);
 		if (i == n - 1)
@@ -43,8 +38,7 @@ void Try(int i)
 	}
 }
 
-void testCase()
-{
+void testCase() {
 	cin >> n;
 	a.resize(n);
 	b.clear();
@@ -54,26 +48,22 @@ void testCase()
 	sort(a.rbegin(), a.rend());
 	Try(0);
 	sort(res.begin(), res.end());
-	for (auto i : res)
-	{
-		for (int j : i)
-		{
+	for (auto i : res) {
+		for (int j : i) {
 			cout << j << " ";
 		}
 		cout << endl;
 	}
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		testCase();
 		cout << "\n";
 	}
