@@ -15,15 +15,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		ll a[n];
@@ -31,8 +29,7 @@ int main()
 		cin >> a[i];
 		ll ans = 0;
 		sort(a, a + n);
-		REP(i, n)
-		{
+		REP(i, n) {
 			ans = (ans + i * a[i]) % mod;
 		}
 		cout << ans << endl;
