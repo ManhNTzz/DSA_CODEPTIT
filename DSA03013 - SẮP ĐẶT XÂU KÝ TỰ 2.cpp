@@ -15,16 +15,14 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void testCase()
-{
+void testCase() {
 	int d;
 	cin >> d;
 	string s;
 	cin >> s;
 	int dd[127] = {};
 	int maxx = 0;
-	for (char i : s)
-	{
+	for (char i : s) {
 		dd[i]++;
 		maxx = max(maxx, dd[i]);
 	}
@@ -34,16 +32,14 @@ void testCase()
 		cout << -1;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		testCase();
 		cout << "\n";
 	}
