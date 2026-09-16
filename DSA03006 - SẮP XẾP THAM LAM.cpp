@@ -15,25 +15,21 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		int a[100];
 		FOR(i, 1, n)
 		cin >> a[i];
 		int ok = 1;
-		FOR(i, 1, n)
-		{
-			if (a[i] != i && a[i] != n - i + 1)
-			{
+		FOR(i, 1, n) {
+			if (a[i] != i && a[i] != n - i + 1) {
 				cout << "No" << endl;
 				ok = 0;
 				break;
