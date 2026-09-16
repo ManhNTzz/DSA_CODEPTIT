@@ -15,27 +15,23 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		priority_queue<int, vector<int>, greater<int>> pq;
 		int n;
 		cin >> n;
-		FOR(i, 1, n)
-		{
+		FOR(i, 1, n) {
 			int x;
 			cin >> x;
 			pq.push(x);
 		}
 		ll sum2 = 0;
-		while (pq.size() >= 2)
-		{
+		while (pq.size() >= 2) {
 			int x = pq.top();
 			pq.pop();
 			int y = pq.top();
