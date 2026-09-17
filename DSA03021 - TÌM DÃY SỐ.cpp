@@ -13,24 +13,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
     vector<long long> a(n);
     for (int i = 0; i < n; i++)
         cin >> a[i];
     long long ans = LLONG_MAX;
-    for (long long k = 1; k <= 100000; k++)
-    {
+    for (long long k = 1; k <= 100000; k++) {
         long long sum = 0;
         bool ok = true;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             long long l = a[i] / (k + 1) + 1;
             long long r = a[i] / k;
-            if (l > r)
-            {
+            if (l > r) {
                 ok = false;
                 break;
             }
