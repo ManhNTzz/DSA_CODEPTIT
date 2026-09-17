@@ -13,11 +13,9 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t = 1; // hoặc dùng cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n;
 		cin >> n;
 		vector<ll> a(n);
