@@ -15,28 +15,24 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		int seven = n / 7;
 		int four = n % 7;
-		while (four % 4 != 0 && seven > 0 && four <= 28)
-		{
+		while (four % 4 != 0 && seven > 0 && four <= 28) {
 			seven--;
 			four += 7;
 		}
 		if (four % 4 == 0)
 			four /= 4;
-		else
-		{
+		else {
 			cout << -1 << endl;
 			continue;
 		}
