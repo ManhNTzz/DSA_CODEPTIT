@@ -13,16 +13,14 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
     string s;
     cin >> s;
 
     int X = 0, T = 0, D = 0;
-    for (char c : s)
-    {
+    for (char c : s) {
         if (c == 'X')
             X++;
         else if (c == 'D')
@@ -30,16 +28,14 @@ int main()
     }
 
     int diffX = 0, diffD = 0, XD = 0, DX = 0;
-    for (int i = 0; i < X; i++)
-    {
+    for (int i = 0; i < X; i++) {
         if (s[i] != 'X')
             diffX++;
         if (s[i] == 'D')
             XD++;
     }
 
-    for (int i = n - D; i < n; i++)
-    {
+    for (int i = n - D; i < n; i++) {
         if (s[i] != 'D')
             diffD++;
         if (s[i] == 'X')
