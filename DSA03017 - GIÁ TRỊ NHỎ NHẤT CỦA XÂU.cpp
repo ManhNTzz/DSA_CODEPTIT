@@ -13,15 +13,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int k;
 		cin >> k;
 		string s;
@@ -30,13 +28,11 @@ int main()
 		for (char i : s)
 			dd[i]++;
 		priority_queue<int> q;
-		for (int i : dd)
-		{
+		for (int i : dd) {
 			if (i > 0)
 				q.push(i);
 		}
-		while (k--)
-		{
+		while (k--) {
 			if (q.empty())
 				break;
 			int x = q.top();
@@ -45,8 +41,7 @@ int main()
 			q.push(x);
 		}
 		ll ans = 0;
-		while (!q.empty())
-		{
+		while (!q.empty()) {
 			ll x = q.top();
 			q.pop();
 			ans += x * x;
