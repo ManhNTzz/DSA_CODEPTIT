@@ -13,21 +13,17 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		ll p, q;
 		cin >> p >> q;
-		while (true)
-		{
-			if (q % p == 0)
-			{
+		while (true) {
+			if (q % p == 0) {
 				cout << "1/" << q / p;
 				break;
 			}
