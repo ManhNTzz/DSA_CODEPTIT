@@ -13,15 +13,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
         int n = s.len;
@@ -30,17 +28,14 @@ int main()
         REP(i, n)
         if (s[i] == '[')
             pos.push_back(i);
-        REP(i, n)
-        {
-            if (s[i] == '[')
-            {
+        REP(i, n) {
+            if (s[i] == '[') {
                 p++;
                 canbang++;
             }
             else
                 canbang--;
-            if (canbang < 0)
-            {
+            if (canbang < 0) {
                 ans += pos[p] - i;
                 swap(s[i], s[pos[p]]);
                 canbang = 1;
