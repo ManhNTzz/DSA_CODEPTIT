@@ -14,19 +14,16 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 // Giống bài LỰA CHỌN TỐI ƯU
 
-bool cmp(pair<int, int> a, pair<int, int> b)
-{
+bool cmp(pair<int, int> a, pair<int, int> b) {
 	if (a.second == b.second)
 		return a.first < b.first;
 	return a.second < b.second;
 }
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n;
 		cin >> n;
 		vector<pair<int, int>> a(n);
@@ -35,10 +32,8 @@ int main()
 		sort(a.begin(), a.end(), cmp);
 		int cnt = 1;
 		int curTime = a[0].second;
-		for (int i = 1; i < n; i++)
-		{
-			if (a[i].first >= curTime)
-			{
+		for (int i = 1; i < n; i++) {
+			if (a[i].first >= curTime) {
 				curTime = a[i].second;
 				cnt++;
 			}
