@@ -3,8 +3,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-void testCase()
-{
+void testCase() {
     int n, s, m;
     cin >> n >> s >> m;
     if (n < m || 6 * (n - m) < m)
@@ -13,16 +12,14 @@ void testCase()
         cout << ceil((float)m * s / n);
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
     int T = 1;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         testCase();
         cout << "\n";
     }
