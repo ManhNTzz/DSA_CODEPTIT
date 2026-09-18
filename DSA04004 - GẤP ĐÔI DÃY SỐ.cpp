@@ -15,8 +15,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int dequy(int n, ll k)
-{
+int dequy(int n, ll k) {
 	ll mid = pow(2, n - 1);
 	if (k == mid)
 		return n;
@@ -24,15 +23,13 @@ int dequy(int n, ll k)
 		return dequy(n - 1, k);
 	return dequy(n - 1, k - mid);
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		ll k;
 		cin >> n >> k;
