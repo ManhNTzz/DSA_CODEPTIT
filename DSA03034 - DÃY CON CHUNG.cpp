@@ -15,8 +15,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void testCase()
-{
+void testCase() {
 	int n, m, k;
 	cin >> n >> m >> k;
 	vector<int> a(n), b(m), c(k);
@@ -28,10 +27,8 @@ void testCase()
 		cin >> i;
 
 	int i = 0, j = 0, h = 0, ok = 0;
-	while (i < n && j < m && h < k)
-	{
-		if (a[i] == b[j] && a[i] == c[h])
-		{
+	while (i < n && j < m && h < k) {
+		if (a[i] == b[j] && a[i] == c[h]) {
 			cout << a[i] << " ";
 			i++, j++, h++, ok = 1;
 			continue;
@@ -47,16 +44,14 @@ void testCase()
 		cout << "NO";
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 
 	int T = 1;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		testCase();
 		cout << "\n";
 	}
