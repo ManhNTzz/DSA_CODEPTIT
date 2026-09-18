@@ -18,8 +18,7 @@ const int INF = 1e9;
 // Cre by ManhNTzz
 
 ll n, r;
-ll tinh(ll n, ll r)
-{
+ll tinh(ll n, ll r) {
 	if (r == 0)
 		return 1;
 	ll pt = tinh(n, r / 2);
@@ -28,20 +27,17 @@ ll tinh(ll n, ll r)
 		ans = (ans * n) % mod;
 	return ans;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n;
 		ll a = n;
 		r = 0;
-		while (n > 0)
-		{
+		while (n > 0) {
 			r = r * 10 + n % 10;
 			n /= 10;
 		}
