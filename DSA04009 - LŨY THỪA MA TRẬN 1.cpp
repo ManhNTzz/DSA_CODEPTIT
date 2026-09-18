@@ -19,13 +19,11 @@ const int INF = 1e9;
 
 ll a[105][105], d[105][105];
 int n, k;
-void tinh(ll a[105][105], ll b[105][105])
-{
+void tinh(ll a[105][105], ll b[105][105]) {
     ll c[105][105] = {};
     FOR(i, 1, n)
     FOR(j, 1, n)
-    FOR(k, 1, n)
-    {
+    FOR(k, 1, n) {
         c[i][j] += a[i][k] * b[k][j];
         c[i][j] %= mod;
     }
@@ -33,8 +31,7 @@ void tinh(ll a[105][105], ll b[105][105])
     FOR(j, 1, n)
     a[i][j] = c[i][j];
 }
-void mu(ll a[105][105], ll k)
-{
+void mu(ll a[105][105], ll k) {
     if (k == 1)
         return;
     mu(a, k / 2);
@@ -42,25 +39,21 @@ void mu(ll a[105][105], ll k)
     if (k % 2 == 1)
         tinh(a, d);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> n >> k;
         FOR(i, 1, n)
-        FOR(j, 1, n)
-        {
+        FOR(j, 1, n) {
             cin >> a[i][j];
             d[i][j] = a[i][j];
         }
         mu(a, k);
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             FOR(j, 1, n)
             cout << a[i][j] << " ";
             cout << endl;
