@@ -15,25 +15,21 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-ll Chuyen(string s)
-{
+ll Chuyen(string s) {
 	ll result = 0;
-	for (char c : s)
-	{
+	for (char c : s) {
 		ll x = c - '0';
 		result = result * 2 + x;
 	}
 	return result;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string a, b;
 		cin >> a >> b;
 		ll x = Chuyen(a);
