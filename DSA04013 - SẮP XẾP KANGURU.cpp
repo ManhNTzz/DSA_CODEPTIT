@@ -15,12 +15,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n;
 		cin >> n;
 		vector<int> a(n);
@@ -31,10 +29,8 @@ int main()
 
 		int i = n / 2, j = n - 1;
 		int cnt = 0;
-		while (i >= 0 && j >= n / 2)
-		{
-			if (a[i] * 2 <= a[j])
-			{
+		while (i >= 0 && j >= n / 2) {
+			if (a[i] * 2 <= a[j]) {
 				i--, j--, cnt++;
 			}
 			else
