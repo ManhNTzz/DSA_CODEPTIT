@@ -15,8 +15,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-ll sz(ll n)
-{
+ll sz(ll n) {
     if (n == 0)
         return 1;
     if (n == 1)
@@ -24,8 +23,7 @@ ll sz(ll n)
     return sz(n / 2) * 2 + 1;
 }
 
-ll cnt(ll n, ll L, ll R, ll left, ll right)
-{
+ll cnt(ll n, ll L, ll R, ll left, ll right) {
     if (R < left || L > right)
         return 0;
     if (n == 0)
@@ -45,12 +43,10 @@ ll cnt(ll n, ll L, ll R, ll left, ll right)
     return res;
 }
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         ll n, l, r;
         cin >> n >> l >> r;
         ll size = sz(n);
