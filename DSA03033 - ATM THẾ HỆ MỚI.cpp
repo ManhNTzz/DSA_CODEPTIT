@@ -15,8 +15,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-ll get_mincost(ll m)
-{
+ll get_mincost(ll m) {
     if (m == 0)
         return 0;
     ll q = m / 5;
@@ -27,8 +26,7 @@ ll get_mincost(ll m)
     return res;
 }
 
-ll get_minways(ll m)
-{
+ll get_minways(ll m) {
     if (m == 0)
         return 1;
     ll q = m / 5;
@@ -43,20 +41,17 @@ ll get_minways(ll m)
     return (q == 0 ? 2 : 3);
 }
 
-int main()
-{
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     int T;
     cin >> T;
-    for (int t = 0; t < T; t++)
-    {
+    for (int t = 0; t < T; t++) {
         ll W;
         int c;
         cin >> W;
         cin >> c;
-        if (W % 1000 != 0)
-        {
+        if (W % 1000 != 0) {
             cout << 0 << '\n';
             continue;
         }
@@ -64,8 +59,7 @@ int main()
         ll minb = 0;
         ll nways = 1;
         ll cur = ww;
-        for (int k = 0; k < c; k++)
-        {
+        for (int k = 0; k < c; k++) {
             ll x = cur % 10;
             minb += get_mincost(x);
             nways *= get_minways(x);
