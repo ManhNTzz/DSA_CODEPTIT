@@ -15,8 +15,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -24,8 +23,7 @@ int main()
     cin >> n;
     int a[n];
     int dp[n + 1] = {};
-    REP(i, n)
-    {
+    REP(i, n) {
         cin >> a[i];
         dp[a[i]] = dp[a[i] - 1] + 1;
     }
