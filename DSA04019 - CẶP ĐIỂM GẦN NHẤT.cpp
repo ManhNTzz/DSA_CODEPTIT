@@ -3,22 +3,18 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-struct Point
-{
+struct Point {
     double x, y;
-    bool operator<(const Point &p) const
-    {
+    bool operator<(const Point &p) const {
         return x < p.x;
     }
 };
 
-inline double dist(Point a, Point b)
-{
+inline double dist(Point a, Point b) {
     return hypot(a.x - b.x, a.y - b.y);
 }
 
-double closest_pair(int l, int r, vector<Point> &P)
-{
+double closest_pair(int l, int r, vector<Point> &P) {
     if (l >= r)
         return 1e18;
 
@@ -27,10 +23,8 @@ double closest_pair(int l, int r, vector<Point> &P)
     double d = min(closest_pair(l, mid, P), closest_pair(mid + 1, r, P));
 
     vector<Point> strip;
-    for (int i = l; i <= r; ++i)
-    {
-        if (abs(P[i].x - midPoint.x) < d)
-        {
+    for (int i = l; i <= r; ++i) {
+        if (abs(P[i].x - midPoint.x) < d) {
             strip.push_back(P[i]);
         }
     }
@@ -39,10 +33,8 @@ double closest_pair(int l, int r, vector<Point> &P)
          { return a.y < b.y; });
 
     int sz = strip.size();
-    for (int i = 0; i < sz; ++i)
-    {
-        for (int j = i + 1; j < sz && (strip[j].y - strip[i].y) < d; ++j)
-        {
+    for (int i = 0; i < sz; ++i) {
+        for (int j = i + 1; j < sz && (strip[j].y - strip[i].y) < d; ++j) {
             d = min(d, dist(strip[i], strip[j]));
         }
     }
@@ -50,8 +42,7 @@ double closest_pair(int l, int r, vector<Point> &P)
     return d;
 }
 
-void solve()
-{
+void solve() {
     int n;
     if (!(cin >> n))
         return;
@@ -64,14 +55,12 @@ void solve()
     cout << fixed << setprecision(6) << closest_pair(0, n - 1, P) << '\n';
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int t;
-    if (cin >> t)
-    {
+    if (cin >> t) {
         while (t--)
             solve();
     }
