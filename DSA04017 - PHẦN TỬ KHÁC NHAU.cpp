@@ -15,15 +15,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		ll a[n], b[n - 1];
@@ -32,17 +30,14 @@ int main()
 		REP(i, n - 1)
 		cin >> b[i];
 		int ok = 0, j;
-		REP(i, n - 1)
-		{
-			if (a[i] != b[i])
-			{
+		REP(i, n - 1) {
+			if (a[i] != b[i]) {
 				ok = 1;
 				j = i;
 				break;
 			}
 		}
-		if (ok)
-		{
+		if (ok) {
 			cout << j + 1;
 		}
 		else
