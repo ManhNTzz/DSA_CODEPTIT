@@ -15,8 +15,7 @@ const long long mod = 1e9 + 7;
 // Cre by ManhNTzz
 
 ll n, k;
-ll Pow(ll n, ll k)
-{
+ll Pow(ll n, ll k) {
 	if (k == 0)
 		return 1;
 	ll tmp = Pow(n, k / 2);
@@ -25,14 +24,12 @@ ll Pow(ll n, ll k)
 		res = (res * n) % mod;
 	return res;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T = 20;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> k;
 		if (n == 0 && k == 0)
 			break;
