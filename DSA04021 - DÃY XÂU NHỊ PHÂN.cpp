@@ -16,8 +16,7 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 ll F[100];
-char FiboWord(int n, ll k)
-{
+char FiboWord(int n, ll k) {
 	if (n == 1)
 		return '0';
 	if (n == 2)
@@ -26,15 +25,13 @@ char FiboWord(int n, ll k)
 		return FiboWord(n - 2, k);
 	return FiboWord(n - 1, k - F[n - 2]);
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		long long k;
 		cin >> n >> k;
