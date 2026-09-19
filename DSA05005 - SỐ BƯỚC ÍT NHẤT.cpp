@@ -13,20 +13,17 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n;
 		cin >> n;
 		vector<int> a(n);
 		REP(i, n)
 		cin >> a[i];
 		vector<int> dp;
-		REP(i, n)
-		{
+		REP(i, n) {
 			auto it = upper_bound(dp.begin(), dp.end(), a[i]);
 			if (it == dp.end())
 				dp.push_back(a[i]);
