@@ -15,17 +15,14 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, x;
 		cin >> n;
 		int cnt = 0;
-		REP(i, n)
-		{
+		REP(i, n) {
 			cin >> x;
 			cnt += 1 - x;
 		}
