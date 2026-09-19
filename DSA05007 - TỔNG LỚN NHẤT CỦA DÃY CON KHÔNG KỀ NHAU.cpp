@@ -13,20 +13,17 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		ll a[n + 1], f[n + 1] = {};
-		for (int i = 1; i <= n; ++i)
-		{
+		for (int i = 1; i <= n; ++i) {
 			cin >> a[i];
 			if (i == 1)
 				f[i] = a[i];
