@@ -15,15 +15,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         ll n, k;
         cin >> n >> k;
         vector<ll> a(n);
@@ -32,13 +30,12 @@ int main()
         sort(ALL(a));
         ll ans = 0;
         int j = 0;
-        REP(i, n)
-        {
+        REP(i, n) {
             while (j < n && a[j] - a[i] < k)
                 j++;
             ans += (j - i - 1);
         }
         cout << ans << endl;
     }
-    // Cre by ManhNTzz
+    return 0;
 }
