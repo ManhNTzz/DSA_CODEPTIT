@@ -15,35 +15,29 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void binarySearch(ll a[], int n, ll x)
-{
+void binarySearch(ll a[], int n, ll x) {
 	int l = 0, r = n - 1;
 	ll pos = -1;
-	while (l <= r)
-	{
+	while (l <= r) {
 		ll mid = (l + r) / 2;
-		if (a[mid] <= x)
-		{
+		if (a[mid] <= x) {
 			pos = mid + 1;
 			l = mid + 1;
 		}
-		else
-		{
+		else {
 			r = mid - 1;
 		}
 	}
 	cout << pos << endl;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		ll x;
 		cin >> n >> x;
