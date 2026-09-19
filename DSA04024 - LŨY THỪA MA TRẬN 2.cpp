@@ -17,13 +17,11 @@ const long long mod = 1000000007;
 
 int n, k;
 ll a[11][11], d[11][11];
-void Mul(ll a[11][11], ll b[11][11])
-{
+void Mul(ll a[11][11], ll b[11][11]) {
     ll c[11][11] = {};
     FOR(i, 1, n)
     FOR(j, 1, n)
-    FOR(k, 1, n)
-    {
+    FOR(k, 1, n) {
         c[i][j] += a[i][k] * b[k][j];
         c[i][j] %= mod;
     }
@@ -31,8 +29,7 @@ void Mul(ll a[11][11], ll b[11][11])
     FOR(j, 1, n)
     a[i][j] = c[i][j];
 }
-void Pow(ll a[11][11], int k)
-{
+void Pow(ll a[11][11], int k) {
     if (k == 1)
         return;
     Pow(a, k / 2);
@@ -40,26 +37,22 @@ void Pow(ll a[11][11], int k)
     if (k % 2 == 1)
         Mul(a, d);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> n >> k;
         FOR(i, 1, n)
-        FOR(j, 1, n)
-        {
+        FOR(j, 1, n) {
             cin >> a[i][j];
             d[i][j] = a[i][j];
         }
         Pow(a, k);
         ll ans = 0;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             ans += a[i][n];
             ans %= mod;
         }
