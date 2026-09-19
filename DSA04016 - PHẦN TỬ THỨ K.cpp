@@ -15,32 +15,27 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int m, n, k;
 		cin >> m >> n >> k;
 		int a[m], b[n];
 		multiset<int> v;
-		REP(i, m)
-		{
+		REP(i, m) {
 			cin >> a[i];
 			v.insert(a[i]);
 		}
-		REP(i, n)
-		{
+		REP(i, n) {
 			cin >> b[i];
 			v.insert(b[i]);
 		}
 		vector<int> c;
-		for (auto x : v)
-		{
+		for (auto x : v) {
 			c.push_back(x);
 		}
 		cout << c[k - 1] << endl;
