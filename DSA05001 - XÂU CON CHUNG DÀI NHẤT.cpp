@@ -18,23 +18,20 @@ const int INF = 1e9;
 // Cre by ManhNTzz
 
 int l[1005][1005];
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string s1, s2;
 		cin >> s1 >> s2;
 		memset(l, 0, sizeof(l));
 		int n = s1.len;
 		int m = s2.len;
 		FOR(i, 1, n)
-		FOR(j, 1, m)
-		{
+		FOR(j, 1, m) {
 			if (s1[i - 1] == s2[j - 1])
 				l[i][j] = l[i - 1][j - 1] + 1;
 			else
