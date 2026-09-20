@@ -18,39 +18,32 @@ const long long MOD = 1000000007;
 int n, sum;
 int a[105];
 bool stop;
-void Try(int i, int s)
-{
-    if (i == n || stop || s == sum / 2)
-    {
+void Try(int i, int s) {
+    if (i == n || stop || s == sum / 2) {
         if (s == sum / 2)
             stop = true;
         return;
     }
-    if (s + a[i] <= sum / 2)
-    {
+    if (s + a[i] <= sum / 2) {
         Try(i + 1, s + a[i]);
     }
     Try(i + 1, s);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> n;
         sum = 0;
         stop = false;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             cin >> a[i];
             sum += a[i];
         }
-        if (sum % 2 == 0)
-        {
+        if (sum % 2 == 0) {
             Try(1, 0);
         }
         if (stop)
