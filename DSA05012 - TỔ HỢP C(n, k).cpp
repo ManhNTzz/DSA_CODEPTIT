@@ -15,13 +15,10 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ll C[1001][1001] = {0};
-	for (int i = 0; i <= 1000; i++)
-	{
-		for (int j = 0; j <= i; j++)
-		{
+	for (int i = 0; i <= 1000; i++) {
+		for (int j = 0; j <= i; j++) {
 			if (j == 0 || j == i)
 				C[i][j] = 1;
 			else
@@ -30,8 +27,7 @@ int main()
 	}
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, k;
 		cin >> n >> k;
 		cout << C[n][k] << endl;
