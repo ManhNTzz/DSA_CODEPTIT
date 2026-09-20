@@ -15,20 +15,16 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, k;
 		cin >> n >> k;
 		int dp[n + 1] = {0};
 		dp[0] = 1;
-		FOR(i, 1, n)
-		{
-			FOR(j, 1, k)
-			{
+		FOR(i, 1, n) {
+			FOR(j, 1, k) {
 				if (i >= j)
 					dp[i] = (dp[i] + dp[i - j]) % MOD;
 			}
