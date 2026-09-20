@@ -15,16 +15,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int t;
-    if (cin >> t)
-    {
-        while (t--)
-        {
+    if (cin >> t) {
+        while (t--) {
             int n, k;
             cin >> n >> k;
             vector<int> a(n);
@@ -32,15 +29,12 @@ int main()
             cin >> a[i];
             vector<int> dp(k, -1);
             dp[0] = 0;
-            REP(i, n)
-            {
+            REP(i, n) {
                 int val = a[i] % k;
                 vector<int> next_dp = dp;
 
-                for (int r = 0; r < k; ++r)
-                {
-                    if (dp[r] != -1)
-                    {
+                for (int r = 0; r < k; ++r) {
+                    if (dp[r] != -1) {
                         int new_r = (r + val) % k;
                         next_dp[new_r] = max(next_dp[new_r], dp[r] + 1);
                     }
