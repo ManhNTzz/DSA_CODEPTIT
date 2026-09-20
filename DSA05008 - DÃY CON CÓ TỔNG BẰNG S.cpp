@@ -13,25 +13,21 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, s;
         cin >> n >> s;
         vector<int> a(n + 1), dp(s + 1, 0);
         FOR(i, 1, n)
         cin >> a[i];
         dp[0] = 1;
-        FOR(i, 1, n)
-        {
-            for (int j = s; j >= a[i]; j--)
-            {
+        FOR(i, 1, n) {
+            for (int j = s; j >= a[i]; j--) {
                 if (dp[j - a[i]])
                     dp[j] = 1;
             }
