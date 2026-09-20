@@ -15,15 +15,13 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-string operator*(string s, int b)
-{
+string operator*(string s, int b) {
     if (s == "0" || b == 0)
         return "0";
     int n = s.length();
     string res(n, '0');
     int nho = 0;
-    for (int i = n - 1; i >= 0; i--)
-    {
+    for (int i = n - 1; i >= 0; i--) {
         int sum = (s[i] - '0') * b + nho;
         res[i] = sum % 10 + '0';
         nho = sum / 10;
@@ -33,10 +31,8 @@ string operator*(string s, int b)
     return res;
 }
 
-int ucln(int a, int b)
-{
-    while (a != 0)
-    {
+int ucln(int a, int b) {
+    while (a != 0) {
         int x = a;
         a = b % a;
         b = x;
@@ -44,16 +40,13 @@ int ucln(int a, int b)
     return b;
 }
 
-string solve(int n)
-{
+string solve(int n) {
     vector<int> a;
     for (int i = n + 2; i <= 2 * n; i++)
         a.push_back(i);
-    for (int i = 2; i <= n; i++)
-    {
+    for (int i = 2; i <= n; i++) {
         int x = i;
-        for (int j = 0; j < a.size(); j++)
-        {
+        for (int j = 0; j < a.size(); j++) {
             if (x == 1)
                 break;
             int k = ucln(x, a[j]);
@@ -67,15 +60,13 @@ string solve(int n)
     return ans;
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n;
         cin >> n;
         cout << solve(n) << endl;
