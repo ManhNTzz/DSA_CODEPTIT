@@ -12,17 +12,14 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n;
         cin >> n;
         vector<pair<int, int>> a(n);
-        REP(i, n)
-        {
+        REP(i, n) {
             cin >> a[i].first >> a[i].second;
         }
 
@@ -30,10 +27,8 @@ int main()
              { return a.second < b.second; });
 
         vector<int> dp(n + 1, 1);
-        REP(i, n)
-        {
-            for (int j = 0; j < i; j++)
-            {
+        REP(i, n) {
+            for (int j = 0; j < i; j++) {
                 if (a[j].second < a[i].first)
                     dp[i] = max(dp[i], dp[j] + 1);
             }
