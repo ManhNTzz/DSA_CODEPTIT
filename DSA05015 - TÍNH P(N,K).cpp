@@ -15,21 +15,17 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n, k;
         cin >> n >> k;
         if (k > n)
             cout << "0" << endl;
-        else
-        {
+        else {
             ll ans = 1;
-            for (int i = 1; i <= k; i++)
-            {
+            for (int i = 1; i <= k; i++) {
                 ans *= (ll)n - k + i;
                 ans %= MOD;
             }
