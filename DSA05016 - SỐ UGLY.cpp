@@ -15,14 +15,12 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     vector<int> dp(10005);
     dp[0] = 1;
 
     int a = 0, b = 0, c = 0;
-    for (int i = 1; i < 10005; i++)
-    {
+    for (int i = 1; i < 10005; i++) {
         dp[i] = min({dp[a] * 2, dp[b] * 3, dp[c] * 5});
         if (dp[i] == dp[a] * 2)
             a++;
@@ -34,8 +32,7 @@ int main()
 
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n;
         cin >> n;
         cout << dp[n - 1] << endl;
