@@ -12,15 +12,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
         int n = s.size();
@@ -30,15 +28,12 @@ int main()
         FOR(i, 1, n)
         f[i][i] = 1;
         int ans = 1;
-        for (int len = 2; len <= n; len++)
-        {
-            for (int i = 1; i <= n - len + 1; i++)
-            {
+        for (int len = 2; len <= n; len++) {
+            for (int i = 1; i <= n - len + 1; i++) {
                 int j = i + len - 1;
                 if (len == 2 && s[i] == s[j])
                     f[i][j] = true;
-                else
-                {
+                else {
                     if (s[i] == s[j])
                         f[i][j] = f[i + 1][j - 1];
                 }
