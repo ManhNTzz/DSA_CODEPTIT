@@ -12,12 +12,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, V;
 		cin >> n >> V;
 		vector<pair<int, int>> a(n);
@@ -26,10 +24,8 @@ int main()
 		REP(i, n)
 		cin >> a[i].second;
 		ll dp[1005] = {0};
-		REP(i, n)
-		{
-			for (int j = V; j >= a[i].first; j--)
-			{
+		REP(i, n) {
+			for (int j = V; j >= a[i].first; j--) {
 				dp[j] = max(dp[j - a[i].first] + a[i].second, dp[j]);
 			}
 		}
