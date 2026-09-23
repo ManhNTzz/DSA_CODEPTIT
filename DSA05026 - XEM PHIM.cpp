@@ -12,8 +12,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int C, N;
 	cin >> C >> N;
 	vector<int> a(N);
@@ -23,18 +22,14 @@ int main()
 	vector<int> dp(C + 1, 0);
 	dp[0] = 1;
 
-	for (int x : a)
-	{
-		for (int i = C; i >= x; i--)
-		{
+	for (int x : a) {
+		for (int i = C; i >= x; i--) {
 			if (dp[i - x])
 				dp[i] = 1;
 		}
 	}
-	for (int i = C; i >= 0; i--)
-	{
-		if (dp[i])
-		{
+	for (int i = C; i >= 0; i--) {
+		if (dp[i]) {
 			cout << i << endl;
 			break;
 		}
