@@ -13,24 +13,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		ll n, k;
 		cin >> n >> k;
 		vector<ll> dp(n + 1, 0);
 		dp[0] = 1;
 		FOR(i, 1, n)
-		FOR(j, 1, k)
-		{
-			if (i - j >= 0)
-			{
+		FOR(j, 1, k) {
+			if (i - j >= 0) {
 				dp[i] = (dp[i] + dp[i - j]) % mod;
 			}
 		}
