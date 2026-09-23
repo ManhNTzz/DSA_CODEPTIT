@@ -12,12 +12,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string s;
 		cin >> s;
 		string t = s;
@@ -27,10 +25,8 @@ int main()
 		int dp[105][105] = {};
 
 		int ans = 0;
-		for (int i = 1; i <= n; i++)
-		{
-			for (int j = 1; j <= n; j++)
-			{
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
 				if (s[i - 1] == t[j - 1])
 					dp[i][j] = dp[i - 1][j - 1] + 1;
 				else
