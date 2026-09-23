@@ -12,12 +12,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int tc;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--) {
         int n, k;
         cin >> n >> k;
         vector<int> a(n);
@@ -25,10 +23,8 @@ int main()
             cin >> x;
         vector<int> dp(k + 1, 0);
         dp[0] = 1;
-        for (int i = 1; i <= k; i++)
-        {
-            for (int x : a)
-            {
+        for (int i = 1; i <= k; i++) {
+            for (int x : a) {
                 if (i >= x)
                     dp[i] = (dp[i] + dp[i - x]) % mod;
             }
