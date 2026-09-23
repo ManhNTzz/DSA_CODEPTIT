@@ -12,20 +12,16 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         string s;
         cin >> s;
         ll sum = 0;
-        for (int i = 0; i < s.size(); i++)
-        {
+        for (int i = 0; i < s.size(); i++) {
             string t = "";
-            for (int j = i; j < s.size(); j++)
-            {
+            for (int j = i; j < s.size(); j++) {
                 t += s[j];
                 sum += stoll(t);
             }
