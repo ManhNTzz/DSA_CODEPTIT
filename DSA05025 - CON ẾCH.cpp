@@ -12,20 +12,16 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n;
 		cin >> n;
 		long long dp[n + 1] = {0};
 		dp[0] = 1;
-		for (int i = 1; i <= n; i++)
-		{
-			for (int j = 1; j <= 3; j++)
-			{
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= 3; j++) {
 				if (i >= j)
 					dp[i] += dp[i - j];
 			}
