@@ -14,23 +14,20 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		int a[n];
 		REP(i, n)
 		cin >> a[i];
 		sort(a, a + n);
-		for (int i = 0; i < n / 2; ++i)
-		{
+		for (int i = 0; i < n / 2; ++i) {
 			cout << a[n - i - 1] << " " << a[i] << " ";
 		}
 		if (n % 2 != 0)
