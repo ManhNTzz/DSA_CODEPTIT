@@ -14,26 +14,22 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, m, x;
 		cin >> n >> m;
 		set<int> se1, se2, se3;
-		for (int i = 0; i < n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			cin >> x;
 			se1.insert(x);
 			se2.insert(x);
 		}
-		for (int i = 0; i < m; i++)
-		{
+		for (int i = 0; i < m; i++) {
 			cin >> x;
 			se1.insert(x);
 			if (se2.count(x))
