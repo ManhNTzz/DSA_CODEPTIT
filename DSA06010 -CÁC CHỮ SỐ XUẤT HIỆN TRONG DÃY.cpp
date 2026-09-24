@@ -14,24 +14,20 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         set<int> v;
-        REP(i, n)
-        {
+        REP(i, n) {
             string s;
             cin >> s;
-            REP(j, s.len)
-            {
+            REP(j, s.len) {
                 int x = s[j] - '0';
                 v.insert(x);
             }
