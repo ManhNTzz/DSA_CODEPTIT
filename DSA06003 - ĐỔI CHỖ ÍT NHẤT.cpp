@@ -14,12 +14,10 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n;
         cin >> n;
         vector<int> a(n);
@@ -27,13 +25,10 @@ int main()
             cin >> x;
 
         int ans = 0;
-        REP(i, n)
-        {
+        REP(i, n) {
             int k = i;
-            for (int j = i + 1; j < n; j++)
-            {
-                if (a[j] < a[k])
-                {
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] < a[k]) {
                     k = j;
                 }
             }
