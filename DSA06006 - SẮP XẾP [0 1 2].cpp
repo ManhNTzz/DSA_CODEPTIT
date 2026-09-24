@@ -14,20 +14,17 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int t;
 	cin >> t;
-	while (t--)
-	{
+	while (t--) {
 		int n, x;
 		cin >> n;
 		multiset<int> se;
-		for (int i = 0; i < n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			cin >> x;
 			se.insert(x);
 		}
