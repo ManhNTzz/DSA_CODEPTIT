@@ -16,17 +16,14 @@ using namespace std;
 
 int X;
 
-bool cmp(int a, int b)
-{
+bool cmp(int a, int b) {
 	return abs(X - a) < abs(X - b);
 }
 
-int main()
-{
+int main() {
 	int tc;
 	cin >> tc;
-	while (tc--)
-	{
+	while (tc--) {
 		int n;
 		cin >> n >> X;
 		vector<int> a(n);
