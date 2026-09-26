@@ -15,27 +15,22 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
         REP(i, n)
         cin >> a[i];
         int sum = a[0] + a[1];
-        REP(i, n)
-        {
-            for (int j = i + 1; j < n; ++j)
-            {
-                if (abs(a[i] + a[j]) < abs(sum))
-                {
+        REP(i, n) {
+            for (int j = i + 1; j < n; ++j) {
+                if (abs(a[i] + a[j]) < abs(sum)) {
                     sum = a[i] + a[j];
                 }
             }
