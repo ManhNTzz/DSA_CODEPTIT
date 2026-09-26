@@ -13,26 +13,22 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, m;
         cin >> n >> m;
         int a[n], b[m];
         multiset<int> v;
-        REP(i, n)
-        {
+        REP(i, n) {
             cin >> a[i];
             v.insert(a[i]);
         }
-        REP(i, m)
-        {
+        REP(i, m) {
             cin >> b[i];
             v.insert(b[i]);
         }
