@@ -14,15 +14,13 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         int a[n];
@@ -30,11 +28,9 @@ int main()
         cin >> a[i];
         sort(a, a + n);
         int dem = 0;
-        REP(i, n - 1)
-        {
+        REP(i, n - 1) {
             int x = a[i];
-            while (a[i + 1] - x > 1)
-            {
+            while (a[i + 1] - x > 1) {
                 dem++;
                 x++;
             }
