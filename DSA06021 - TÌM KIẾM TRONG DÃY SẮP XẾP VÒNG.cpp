@@ -13,17 +13,14 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int n, k;
         cin >> n >> k;
         int ind = -1;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             int x;
             cin >> x;
             if (x == k)
