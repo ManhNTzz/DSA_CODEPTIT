@@ -17,35 +17,27 @@ using namespace std;
 #define LIMIT (int)1e6
 vector<bool> isPrime(LIMIT + 1, true);
 
-void sieve()
-{
+void sieve() {
     isPrime[0] = isPrime[1] = false;
-    for (int i = 2; i <= sqrt(LIMIT); i++)
-    {
-        if (isPrime[i])
-        {
-            for (int j = i * i; j <= LIMIT; j += i)
-            {
+    for (int i = 2; i <= sqrt(LIMIT); i++) {
+        if (isPrime[i]) {
+            for (int j = i * i; j <= LIMIT; j += i) {
                 isPrime[j] = false;
             }
         }
     }
 }
 
-int main()
-{
+int main() {
     sieve();
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int M;
         cin >> M;
         bool ok = false;
-        for (int i = 2; i < M; i++)
-        {
-            if (isPrime[i] && isPrime[M - i])
-            {
+        for (int i = 2; i < M; i++) {
+            if (isPrime[i] && isPrime[M - i]) {
                 cout << i << " " << M - i << endl;
                 ok = true;
                 break;
