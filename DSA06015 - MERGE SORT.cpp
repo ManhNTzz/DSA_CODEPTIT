@@ -15,12 +15,10 @@ using namespace std;
 // Cre by ManhNTzz
 // Sort như thường =))
 
-int main()
-{
+int main() {
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
