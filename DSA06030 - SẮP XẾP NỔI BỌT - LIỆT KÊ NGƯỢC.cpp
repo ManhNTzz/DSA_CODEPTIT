@@ -14,28 +14,23 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
         vector<vector<int>> b;
         REP(i, n)
         cin >> a[i];
-        REP(i, n - 1)
-        {
+        REP(i, n - 1) {
             int check = 0;
-            for (int j = 0; j < n - i - 1; j++)
-            {
-                if (a[j] > a[j + 1])
-                {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
                     swap(a[j], a[j + 1]);
                     check = 1;
                 }
@@ -44,8 +39,7 @@ int main()
                 break;
             b.push_back(a);
         }
-        FOD(i, 0, b.size() - 1)
-        {
+        FOD(i, 0, b.size() - 1) {
             cout << "Buoc " << i + 1 << ": ";
             for (auto v : b[i])
                 cout << v << " ";
