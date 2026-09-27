@@ -13,23 +13,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, k;
         cin >> n >> k;
         vector<int> a(n);
         REP(i, n)
         cin >> a[i];
         deque<int> dq;
-        REP(i, n)
-        {
+        REP(i, n) {
             if (dq.front() == i - k)
                 dq.pop_front();
             while (!dq.empty() && a[dq.back()] <= a[i])
