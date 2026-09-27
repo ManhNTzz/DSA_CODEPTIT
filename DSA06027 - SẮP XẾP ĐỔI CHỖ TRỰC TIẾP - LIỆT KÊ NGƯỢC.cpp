@@ -13,32 +13,27 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
         vector<vector<int>> b;
         REP(i, n)
         cin >> a[i];
-        REP(i, n - 1)
-        {
-            for (int j = i + 1; j < n; ++j)
-            {
+        REP(i, n - 1) {
+            for (int j = i + 1; j < n; ++j) {
                 if (a[i] > a[j])
                     swap(a[i], a[j]);
             }
             b.push_back(a);
         }
-        FOD(i, 0, (int)b.size() - 1)
-        {
+        FOD(i, 0, (int)b.size() - 1) {
             cout << "Buoc " << i + 1 << ": ";
             REP(j, n)
             cout << b[i][j] << " ";
