@@ -13,8 +13,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -23,10 +22,8 @@ int main()
     int a[n];
     REP(i, n)
     cin >> a[i];
-    REP(i, n - 1)
-    {
-        for (int j = i + 1; j < n; ++j)
-        {
+    REP(i, n - 1) {
+        for (int j = i + 1; j < n; ++j) {
             if (a[i] > a[j])
                 swap(a[i], a[j]);
         }
