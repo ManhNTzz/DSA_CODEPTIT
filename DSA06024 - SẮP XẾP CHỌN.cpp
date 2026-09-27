@@ -14,8 +14,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -24,11 +23,9 @@ int main()
     vector<int> a(n);
     REP(i, n)
     cin >> a[i];
-    REP(i, n - 1)
-    {
+    REP(i, n - 1) {
         int minn = i;
-        for (int j = i + 1; j < n; j++)
-        {
+        for (int j = i + 1; j < n; j++) {
             if (a[minn] > a[j])
                 minn = j;
         }
