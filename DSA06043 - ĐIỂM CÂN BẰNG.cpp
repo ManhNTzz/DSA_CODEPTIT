@@ -14,31 +14,26 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         int a[n];
         int sum = 0;
         int sum1 = 0;
-        REP(i, n)
-        {
+        REP(i, n) {
             cin >> a[i];
             sum += a[i];
         }
         int ok = 1;
-        REP(i, n)
-        {
+        REP(i, n) {
             int sum2 = sum - sum1 - a[i];
-            if (sum2 == sum1)
-            {
+            if (sum2 == sum1) {
                 cout << i + 1;
                 ok = 0;
                 break;
