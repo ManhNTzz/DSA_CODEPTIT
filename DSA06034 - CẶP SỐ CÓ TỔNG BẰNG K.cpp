@@ -13,12 +13,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, k;
         cin >> n >> k;
         vector<int> a(n);
@@ -28,8 +26,7 @@ int main()
         for (int x : a)
             mp[x]++;
         ll cnt = 0;
-        for (int x : a)
-        {
+        for (int x : a) {
             int y = k - x;
             if (2 * x == k)
                 cnt += (ll)mp[x] * (mp[x] - 1) / 2;
