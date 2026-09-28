@@ -13,12 +13,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
@@ -27,8 +25,7 @@ int main()
 
         vector<int> b(n, INT_MIN);
         int min = INT_MAX;
-        for (int i = n - 1; i >= 1; i--)
-        {
+        for (int i = n - 1; i >= 1; i--) {
             if (a[i] < min)
                 min = a[i];
             b[i - 1] = min;
@@ -37,8 +34,7 @@ int main()
         vector<int> res;
         int cur = a[0];
 
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             cur = max(cur, a[i]);
             if (cur <= b[i])
                 res.push_back(i + 1);
