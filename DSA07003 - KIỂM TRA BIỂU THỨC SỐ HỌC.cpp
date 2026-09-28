@@ -17,27 +17,22 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
     cin.ignore();
-    while (T--)
-    {
+    while (T--) {
         string s;
         getline(cin, s);
         stack<char> st;
         int check = 0;
-        for (auto c : s)
-        {
-            if (c == ')')
-            {
+        for (auto c : s) {
+            if (c == ')') {
                 int ok = 0;
-                while (!st.empty() && st.top() != '(')
-                {
+                while (!st.empty() && st.top() != '(') {
                     char x = st.top();
                     st.pop();
                     if (x == '+' || x == '-' || x == '*' || x == '/')
@@ -47,8 +42,7 @@ int main()
                 if (!ok)
                     check = 1;
             }
-            else
-            {
+            else {
                 st.push(c);
             }
         }
