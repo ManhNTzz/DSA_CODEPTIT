@@ -14,15 +14,13 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n1, n2, n3;
         cin >> n1 >> n2 >> n3;
         ll a[n1], b[n2], c[n3];
@@ -34,10 +32,8 @@ int main()
         cin >> c[i];
         int i = 0, j = 0, k = 0;
         bool ok = 1;
-        while (i < n1 && j < n2 && k < n3)
-        {
-            if (a[i] == b[j] && b[j] == c[k])
-            {
+        while (i < n1 && j < n2 && k < n3) {
+            if (a[i] == b[j] && b[j] == c[k]) {
                 cout << a[i] << " ";
                 ok = 0;
                 i++;
