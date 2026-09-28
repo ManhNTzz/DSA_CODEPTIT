@@ -14,31 +14,26 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         int a[n];
         unordered_map<int, int> freq;
         set<int> v;
-        REP(i, n)
-        {
+        REP(i, n) {
             cin >> a[i];
             v.insert(a[i]);
             freq[a[i]]++;
         }
         int ok = 1;
-        for (auto x : v)
-        {
-            if (freq[x] > n / 2)
-            {
+        for (auto x : v) {
+            if (freq[x] > n / 2) {
                 ok = 0;
                 cout << x;
             }
