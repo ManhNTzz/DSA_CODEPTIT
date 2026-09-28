@@ -13,32 +13,26 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     string s;
     int x;
     vector<int> v;
-    while (cin >> s)
-    {
-        if (s == "push")
-        {
+    while (cin >> s) {
+        if (s == "push") {
             cin >> x;
             v.push_back(x);
         }
-        else if (s == "pop")
-        {
+        else if (s == "pop") {
             if (!v.empty())
                 v.pop_back();
         }
-        else if (s == "show")
-        {
+        else if (s == "show") {
             if (v.empty())
                 cout << "empty";
-            else
-            {
+            else {
                 for (auto i : v)
                     cout << i << " ";
                 cout << endl;
