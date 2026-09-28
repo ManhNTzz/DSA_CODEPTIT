@@ -15,25 +15,21 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<ll> a(n);
         REP(i, n)
         cin >> a[i];
         int ans = 0;
-        REP(i, n - 1)
-        {
-            if (a[i] > a[i + 1])
-            {
+        REP(i, n - 1) {
+            if (a[i] > a[i + 1]) {
                 ans = i + 1;
                 break;
             }
