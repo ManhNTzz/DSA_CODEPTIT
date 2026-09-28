@@ -14,8 +14,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -23,8 +22,7 @@ int main()
     cin >> n;
     vector<int> a, b, c;
     a.resize(n);
-    REP(i, n)
-    {
+    REP(i, n) {
         cin >> a[i];
         if (i % 2 == 0)
             b.push_back(a[i]);
@@ -34,8 +32,7 @@ int main()
     sort(ALL(b));
     sort(ALLN(c));
     int m = min(b.size(), c.size());
-    for (int i = 0; i < m; ++i)
-    {
+    for (int i = 0; i < m; ++i) {
         cout << b[i] << " " << c[i] << " ";
     }
     if (b.size() > c.size())
