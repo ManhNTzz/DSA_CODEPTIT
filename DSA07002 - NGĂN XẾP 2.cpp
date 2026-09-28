@@ -13,8 +13,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -23,25 +22,20 @@ int main()
     string s;
     int x;
     stack<int> v;
-    while (T--)
-    {
+    while (T--) {
         cin >> s;
-        if (s == "PUSH")
-        {
+        if (s == "PUSH") {
             cin >> x;
             v.push(x);
         }
-        else if (s == "POP")
-        {
+        else if (s == "POP") {
             if (!v.empty())
                 v.pop();
         }
-        else if (s == "PRINT")
-        {
+        else if (s == "PRINT") {
             if (v.empty())
                 cout << "NONE" << endl;
-            else
-            {
+            else {
                 cout << v.top() << endl;
             }
         }
