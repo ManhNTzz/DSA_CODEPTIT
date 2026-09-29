@@ -17,24 +17,19 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
         int cnt = 0;
         stack<char> st;
-        for (char c : s)
-        {
+        for (char c : s) {
             if (c == '(')
                 st.push(c);
-            else
-            {
-                if (st.empty())
-                {
+            else {
+                if (st.empty()) {
                     cnt++;
                     st.push(c);
                 }
