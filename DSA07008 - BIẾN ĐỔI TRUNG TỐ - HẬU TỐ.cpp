@@ -3,8 +3,7 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int pre(char x)
-{
+int pre(char x) {
     if (x == '+' || x == '-')
         return 1;
     if (x == '*' || x == '/')
@@ -14,31 +13,25 @@ int pre(char x)
     return 0;
 }
 
-string fix(string s)
-{
+string fix(string s) {
     string ans = "";
     stack<char> st;
 
-    for (char c : s)
-    {
+    for (char c : s) {
         if (isalpha(c))
             ans += c;
         else if (c == '(')
             st.push(c);
-        else if (c == ')')
-        {
-            while (!st.empty() && st.top() != '(')
-            {
+        else if (c == ')') {
+            while (!st.empty() && st.top() != '(') {
                 ans += st.top();
                 st.pop();
             }
             if (!st.empty())
                 st.pop();
         }
-        else
-        {
-            while (!st.empty() && (pre(st.top()) >= pre(c) || pre(st.top()) == pre(c) && c != '^'))
-            {
+        else {
+            while (!st.empty() && (pre(st.top()) >= pre(c) || pre(st.top()) == pre(c) && c != '^')) {
                 ans += st.top();
                 st.pop();
             }
@@ -46,20 +39,17 @@ string fix(string s)
         }
     }
 
-    while (!st.empty())
-    {
+    while (!st.empty()) {
         ans += st.top();
         st.pop();
     }
     return ans;
 }
 
-int main()
-{
+int main() {
     int tc;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--) {
         string s;
         cin >> s;
         cout << fix(s) << endl;
