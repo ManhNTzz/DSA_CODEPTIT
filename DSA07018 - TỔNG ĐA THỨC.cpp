@@ -13,16 +13,12 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void convert(string s, map<int, int> &mp)
-{
-	for (int i = 0; i < s.size(); i++)
-	{
-		if (isdigit(s[i]))
-		{
+void convert(string s, map<int, int> &mp) {
+	for (int i = 0; i < s.size(); i++) {
+		if (isdigit(s[i])) {
 			int j = i;
 			int num = 0;
-			while (j < s.size() && isdigit(s[j]))
-			{
+			while (j < s.size() && isdigit(s[j])) {
 				num = num * 10 + s[j] - '0';
 				j++;
 			}
@@ -30,8 +26,7 @@ void convert(string s, map<int, int> &mp)
 				j++;
 
 			int mu = 0;
-			while (j < s.size() && isdigit(s[j]))
-			{
+			while (j < s.size() && isdigit(s[j])) {
 				mu = mu * 10 + s[j] - '0';
 				j++;
 			}
@@ -44,13 +39,11 @@ void convert(string s, map<int, int> &mp)
 	}
 }
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
 	cin.ignore();
-	while (T--)
-	{
+	while (T--) {
 		string s, t;
 		getline(cin, s);
 		getline(cin, t);
@@ -59,8 +52,7 @@ int main()
 		convert(t, mp);
 		vector<pair<int, int>> a(mp.begin(), mp.end());
 
-		for (int i = a.size() - 1; i >= 0; i--)
-		{
+		for (int i = a.size() - 1; i >= 0; i--) {
 			cout << a[i].second << "*x^" << a[i].first;
 			if (i != 0)
 				cout << " + ";
