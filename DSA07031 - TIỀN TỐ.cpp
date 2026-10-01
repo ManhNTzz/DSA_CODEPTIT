@@ -17,29 +17,24 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		vector<string> s;
-		REP(i, n)
-		{
+		REP(i, n) {
 			string x;
 			cin >> x;
 			s.pb(x);
 		}
 		stack<string> st;
-		FOD(i, 0, s.size() - 1)
-		{
-			if (s[i] == "+" || s[i] == "-" || s[i] == "*" || s[i] == "/")
-			{
+		FOD(i, 0, s.size() - 1) {
+			if (s[i] == "+" || s[i] == "-" || s[i] == "*" || s[i] == "/") {
 				ll a = stoll(st.top());
 				st.pop();
 				ll b = stoll(st.top());
