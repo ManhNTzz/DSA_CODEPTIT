@@ -13,12 +13,10 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		vector<ll> a(n);
@@ -29,15 +27,12 @@ int main()
 		int i = 0;
 
 		ll ans = 0;
-		while (i < n)
-		{
-			if (st.empty() || a[st.top()] <= a[i])
-			{
+		while (i < n) {
+			if (st.empty() || a[st.top()] <= a[i]) {
 				st.push(i);
 				i++;
 			}
-			else
-			{
+			else {
 				ll h = a[st.top()];
 				st.pop();
 				if (st.empty())
@@ -47,8 +42,7 @@ int main()
 			}
 		}
 
-		while (!st.empty())
-		{
+		while (!st.empty()) {
 			ll h = a[st.top()];
 			st.pop();
 			if (st.empty())
