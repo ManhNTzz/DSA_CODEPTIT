@@ -17,24 +17,20 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		stack<ll> st;
-		REP(i, n)
-		{
+		REP(i, n) {
 			string s;
 			cin >> s;
-			if (s == "+" || s == "-" || s == "*" || s == "/")
-			{
+			if (s == "+" || s == "-" || s == "*" || s == "/") {
 				ll a = st.top();
 				st.pop();
 				ll b = st.top();
