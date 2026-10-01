@@ -17,21 +17,18 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string s;
 		cin >> s;
 		int l = s.len;
 		stack<char> st;
-		for (auto c : s)
-		{
+		for (auto c : s) {
 			if (c == ')' && !st.empty() && st.top() == '(')
 				st.pop();
 			else
