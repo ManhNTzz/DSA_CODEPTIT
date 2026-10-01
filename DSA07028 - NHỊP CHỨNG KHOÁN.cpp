@@ -13,23 +13,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		int a[n + 1];
 		FOR(i, 1, n)
 		cin >> a[i];
 		stack<int> st;
-		FOR(i, 1, n)
-		{
+		FOR(i, 1, n) {
 			while (!st.empty() && a[i] >= a[st.top()])
 				st.pop();
 			if (st.empty())
