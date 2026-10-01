@@ -13,33 +13,27 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-ll dtich(ll s[], int n, int m)
-{
+ll dtich(ll s[], int n, int m) {
 	stack<int> st;
 	int i = 1;
 	ll ans = 0;
-	while (i <= m)
-	{
+	while (i <= m) {
 		if (st.empty() || s[i] >= s[st.top()])
 			st.push(i++);
-		else
-		{
+		else {
 			ll doc = st.top();
 			st.pop();
-			if (st.empty())
-			{
+			if (st.empty()) {
 				ans = max(ans, (ll)s[doc] * (i - 1));
 			}
 			else
 				ans = max(ans, (ll)s[doc] * (i - st.top() - 1));
 		}
 	}
-	while (!st.empty())
-	{
+	while (!st.empty()) {
 		ll doc = st.top();
 		st.pop();
-		if (st.empty())
-		{
+		if (st.empty()) {
 			ans = max(ans, (ll)s[doc] * m);
 		}
 		else
@@ -48,30 +42,24 @@ ll dtich(ll s[], int n, int m)
 	return ans;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n, m;
 		cin >> n >> m;
 		int a[505][505];
-		for (int i = 1; i <= n; i++)
-		{
-			for (int j = 1; j <= m; j++)
-			{
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= m; j++) {
 				cin >> a[i][j];
 			}
 		}
 		ll s[505][505];
-		for (int i = 1; i <= n; i++)
-		{
-			for (int j = 1; j <= m; j++)
-			{
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= m; j++) {
 				if (i == 1)
 					s[i][j] = a[i][j];
 				else if (a[i][j] == 0)
@@ -81,8 +69,7 @@ int main()
 			}
 		}
 		ll ans = 0;
-		for (int i = 1; i <= n; i++)
-		{
+		for (int i = 1; i <= n; i++) {
 			ans = max(ans, dtich(s[i], n, m));
 		}
 		cout << ans << endl;
