@@ -3,15 +3,13 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
@@ -22,15 +20,12 @@ int main()
         int i = 0;
 
         int ans = 0;
-        while (i < n)
-        {
-            if (st.empty() || a[st.top()] <= a[i])
-            {
+        while (i < n) {
+            if (st.empty() || a[st.top()] <= a[i]) {
                 st.push(i);
                 i++;
             }
-            else
-            {
+            else {
                 int h = a[st.top()];
                 st.pop();
 
@@ -44,8 +39,7 @@ int main()
                     ans = max(ans, h);
             }
         }
-        while (!st.empty())
-        {
+        while (!st.empty()) {
             int h = a[st.top()];
             st.pop();
 
