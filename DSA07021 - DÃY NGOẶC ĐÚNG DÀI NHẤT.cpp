@@ -13,18 +13,15 @@ const long long mod = 1000000007;
 
 // Cre by ManhNT zz
 
-int kiemtra(string s)
-{
+int kiemtra(string s) {
     int n = s.len;
     stack<int> st;
     st.push(-1);
     int ans = 0;
-    REP(i, n)
-    {
+    REP(i, n) {
         if (s[i] == '(')
             st.push(i);
-        else
-        {
+        else {
             st.pop();
             if (st.empty())
                 st.push(i);
@@ -34,15 +31,13 @@ int kiemtra(string s)
     }
     return ans;
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
         cout << kiemtra(s) << endl;
