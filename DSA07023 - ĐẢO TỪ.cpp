@@ -13,27 +13,23 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
     cin.ignore();
-    while (T--)
-    {
+    while (T--) {
         string s;
         getline(cin, s);
         stringstream ss(s);
         string word;
         stack<string> st;
-        while (ss >> word)
-        {
+        while (ss >> word) {
             st.push(word);
         }
-        while (!st.empty())
-        {
+        while (!st.empty()) {
             cout << st.top() << " ";
             st.pop();
         }
