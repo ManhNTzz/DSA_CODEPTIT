@@ -17,8 +17,7 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -26,26 +25,20 @@ int main()
     cin >> s;
     stack<char> sl, sr;
 
-    for (char c : s)
-    {
-        if (c == '<')
-        {
-            if (!sl.empty())
-            {
+    for (char c : s) {
+        if (c == '<') {
+            if (!sl.empty()) {
                 sr.push(sl.top());
                 sl.pop();
             }
         }
-        else if (c == '>')
-        {
-            if (!sr.empty())
-            {
+        else if (c == '>') {
+            if (!sr.empty()) {
                 sl.push(sr.top());
                 sr.pop();
             }
         }
-        else if (c == '-')
-        {
+        else if (c == '-') {
             if (!sl.empty())
                 sl.pop();
         }
@@ -54,16 +47,14 @@ int main()
     }
     string ans = "";
 
-    while (!sl.empty())
-    {
+    while (!sl.empty()) {
         ans += sl.top();
         sl.pop();
     }
 
     reverse(ans.begin(), ans.end());
 
-    while (!sr.empty())
-    {
+    while (!sr.empty()) {
         ans += sr.top();
         sr.pop();
     }
