@@ -13,24 +13,20 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     int tc;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--) {
         int s, t;
         cin >> s >> t;
         queue<pair<int, int>> qe;
         qe.push({s, 0});
         unordered_set<int> se;
         int ans = 0;
-        while (!qe.empty())
-        {
+        while (!qe.empty()) {
             auto &[top, cnt] = qe.front();
             qe.pop();
-            if (top == t)
-            {
+            if (top == t) {
                 ans = cnt;
                 break;
             }
