@@ -13,21 +13,18 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         queue<string> qe;
         qe.push("1");
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             string s = qe.front();
             qe.pop();
             cout << s << " ";
