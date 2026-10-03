@@ -13,51 +13,43 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
     deque<int> de;
-    while (T--)
-    {
+    while (T--) {
         string s;
         cin >> s;
-        if (s == "PUSHFRONT")
-        {
+        if (s == "PUSHFRONT") {
             int x;
             cin >> x;
             de.push_front(x);
         }
-        else if (s == "PRINTFRONT")
-        {
+        else if (s == "PRINTFRONT") {
             if (de.empty())
                 cout << "NONE" << endl;
             else
                 cout << de.front() << endl;
         }
-        else if (s == "POPFRONT")
-        {
+        else if (s == "POPFRONT") {
             if (!de.empty())
                 de.pop_front();
         }
-        else if (s == "PUSHBACK")
-        {
+        else if (s == "PUSHBACK") {
             int x;
             cin >> x;
             de.push_back(x);
         }
-        else if (s == "PRINTBACK")
-        {
+        else if (s == "PRINTBACK") {
             if (de.empty())
                 cout << "NONE" << endl;
             else
                 cout << de.back() << endl;
         }
-        else if (s == "POPBACK")
-        {
+        else if (s == "POPBACK") {
             if (!de.empty())
                 de.pop_back();
         }
