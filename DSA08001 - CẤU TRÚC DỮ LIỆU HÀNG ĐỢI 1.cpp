@@ -13,51 +13,43 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int q;
         cin >> q;
         queue<int> qe;
-        REP(i, q)
-        {
+        REP(i, q) {
             int n;
             cin >> n;
             if (n == 1)
                 cout << qe.size() << endl;
-            else if (n == 2)
-            {
+            else if (n == 2) {
                 if (qe.empty())
                     cout << "YES" << endl;
                 else
                     cout << "NO" << endl;
             }
-            else if (n == 3)
-            {
+            else if (n == 3) {
                 int v;
                 cin >> v;
                 qe.push(v);
             }
-            else if (n == 4)
-            {
+            else if (n == 4) {
                 if (!qe.empty())
                     qe.pop();
             }
-            else if (n == 5)
-            {
+            else if (n == 5) {
                 if (qe.empty())
                     cout << -1 << endl;
                 else
                     cout << qe.front() << endl;
             }
-            else if (n == 6)
-            {
+            else if (n == 6) {
                 if (qe.empty())
                     cout << -1 << endl;
                 else
