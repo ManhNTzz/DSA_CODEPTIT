@@ -13,8 +13,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -23,8 +22,7 @@ int main()
     for (int i = 1; i <= 5; i++)
         qe.push(i);
 
-    while (!qe.empty())
-    {
+    while (!qe.empty()) {
         int x = qe.front();
         qe.pop();
         res.push_back(x);
@@ -36,8 +34,7 @@ int main()
         for (char c : t)
             vis[c - '0'] = true;
 
-        for (int i = 0; i <= 5; i++)
-        {
+        for (int i = 0; i <= 5; i++) {
             if (!vis[i])
                 qe.push(x * 10 + i);
         }
@@ -45,8 +42,7 @@ int main()
 
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int l, r;
         cin >> l >> r;
         auto it1 = lower_bound(res.begin(), res.end(), l);
