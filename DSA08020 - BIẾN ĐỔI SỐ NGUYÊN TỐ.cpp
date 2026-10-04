@@ -13,27 +13,23 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-bool snt(int n)
-{
+bool snt(int n) {
 	if (n < 2)
 		return false;
-	for (int i = 2; i <= sqrt(n); i++)
-	{
+	for (int i = 2; i <= sqrt(n); i++) {
 		if (n % i == 0)
 			return false;
 	}
 	return true;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string s, t;
 		cin >> s >> t;
 
@@ -44,26 +40,21 @@ int main()
 		unordered_map<string, bool> mp;
 		mp[s] = true;
 
-		while (!qe.empty())
-		{
+		while (!qe.empty()) {
 			auto [st, cnt] = qe.front();
 			qe.pop();
-			if (st == t)
-			{
+			if (st == t) {
 				ans = min(ans, cnt);
 				continue;
 			}
 
-			for (int i = 0; i < 4; i++)
-			{
+			for (int i = 0; i < 4; i++) {
 				string tmp = st;
-				for (int j = '0'; j <= '9'; j++)
-				{
+				for (int j = '0'; j <= '9'; j++) {
 					if (i == 0 && j == '0' || i == 3 && (j - '0') % 2 == 0)
 						continue;
 					tmp[i] = j;
-					if (!mp[tmp] && snt(stoi(tmp)))
-					{
+					if (!mp[tmp] && snt(stoi(tmp))) {
 						qe.push({tmp, cnt + 1});
 						mp[tmp] = true;
 					}
