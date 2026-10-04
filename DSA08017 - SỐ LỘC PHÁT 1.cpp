@@ -17,22 +17,19 @@ const int INF = 1e9;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         queue<string> qe;
         qe.push("");
         stack<string> st;
-        while (!qe.empty())
-        {
+        while (!qe.empty()) {
             string x = qe.front();
             qe.pop();
             if (x.len > 0)
@@ -42,8 +39,7 @@ int main()
             qe.push(x + "6");
             qe.push(x + "8");
         }
-        while (!st.empty())
-        {
+        while (!st.empty()) {
             cout << st.top() << " ";
             st.pop();
         }
