@@ -13,15 +13,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		queue<pair<int, int>> qe;
@@ -32,27 +30,22 @@ int main()
 
 		int ans = INT_MAX;
 
-		while (!qe.empty())
-		{
+		while (!qe.empty()) {
 			auto [val, cnt] = qe.front();
 			qe.pop();
 
-			if (val == 1)
-			{
+			if (val == 1) {
 				ans = min(ans, cnt);
 				break;
 			}
 
-			if (!mp[val - 1])
-			{
+			if (!mp[val - 1]) {
 				mp[val - 1] = true;
 				qe.push({val - 1, cnt + 1});
 			}
 
-			for (int i = 2; i <= sqrt(val); i++)
-			{
-				if (val % i == 0 && !mp[val / i])
-				{
+			for (int i = 2; i <= sqrt(val); i++) {
+				if (val % i == 0 && !mp[val / i]) {
 					mp[val / i] = true;
 					qe.push({val / i, cnt + 1});
 				}
