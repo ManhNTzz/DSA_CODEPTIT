@@ -13,35 +13,30 @@ const long long mod = 1000000007;
 
 // Cre by ManhnTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, m;
         cin >> n >> m;
         vector<vector<int>> a(n, vector<int>(m));
         vector<vector<bool>> vs(n, vector<bool>(m, false));
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++)
                 cin >> a[i][j];
         }
         queue<pair<pair<int, int>, int>> qe;
         qe.push({{0, 0}, 0});
         int ans = -1;
-        while (!qe.empty())
-        {
+        while (!qe.empty()) {
             pair<pair<int, int>, int> top = qe.front();
             qe.pop();
             auto [x, y] = top.first;
             int cnt = top.second;
-            if (x == n - 1 && y == m - 1)
-            {
+            if (x == n - 1 && y == m - 1) {
                 ans = cnt;
                 break;
             }
