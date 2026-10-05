@@ -17,32 +17,27 @@ const long long mod = 1000000007;
 
 vector<int> dsk[1005];
 bool vs[1005];
-void DFS(int u)
-{
+void DFS(int u) {
 	cout << u << " ";
 	vs[u] = true;
-	for (auto i : dsk[u])
-	{
+	for (auto i : dsk[u]) {
 		if (!vs[i])
 			DFS(i);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int v, e, u;
 		cin >> v >> e >> u;
 		memset(vs, false, sizeof(vs));
 		REP(i, 1005)
 		dsk[i].clear();
-		REP(i, e)
-		{
+		REP(i, e) {
 			int x, y;
 			cin >> x >> y;
 			dsk[x].pb(y);
