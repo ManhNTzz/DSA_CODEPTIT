@@ -13,20 +13,17 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		vector<int> a(n);
 		vector<int> mod[3];
 		int sum = 0;
 
-		for (int i = 0; i < n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			cin >> a[i];
 			sum += a[i];
 			mod[a[i] % 3].push_back(i);
@@ -38,30 +35,24 @@ int main()
 			sort(mod[r].begin(), mod[r].end(), [&](int i, int j)
 				 { return a[i] < a[j]; });
 
-		if (sum % 3 == 1)
-		{
+		if (sum % 3 == 1) {
 			if (!mod[1].empty())
 				used[mod[1][0]] = false;
-			else if (mod[2].size() >= 2)
-			{
+			else if (mod[2].size() >= 2) {
 				used[mod[2][0]] = used[mod[2][1]] = false;
 			}
-			else
-			{
+			else {
 				cout << "-1\n";
 				continue;
 			}
 		}
-		else if (sum % 3 == 2)
-		{
+		else if (sum % 3 == 2) {
 			if (!mod[2].empty())
 				used[mod[2][0]] = false;
-			else if (mod[1].size() >= 2)
-			{
+			else if (mod[1].size() >= 2) {
 				used[mod[1][0]] = used[mod[1][1]] = false;
 			}
-			else
-			{
+			else {
 				cout << "-1\n";
 				continue;
 			}
@@ -76,8 +67,7 @@ int main()
 			cout << "-1\n";
 		else if (*max_element(res.begin(), res.end()) == 0)
 			cout << "0\n";
-		else
-		{
+		else {
 			sort(res.rbegin(), res.rend());
 			for (int x : res)
 				cout << x;
