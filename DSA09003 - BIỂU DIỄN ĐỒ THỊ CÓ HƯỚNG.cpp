@@ -13,29 +13,24 @@ const long long mod = 1000000007;
 
 // Cre by ManhNtzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int v, e;
         cin >> v >> e;
         vector<set<int>> dsk(v + 1);
-        FOR(i, 1, e)
-        {
+        FOR(i, 1, e) {
             int x, y;
             cin >> x >> y;
             dsk[x].insert(y);
         }
-        FOR(i, 1, v)
-        {
+        FOR(i, 1, v) {
             cout << i << ": ";
-            for (auto x : dsk[i])
-            {
+            for (auto x : dsk[i]) {
                 cout << x << " ";
             }
             cout << endl;
