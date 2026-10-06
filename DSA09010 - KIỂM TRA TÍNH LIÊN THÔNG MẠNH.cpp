@@ -20,41 +20,33 @@ const int INF = 1e9;
 int a[1005][1005];
 bool vs[1005];
 int n, m;
-void DFS(int u)
-{
+void DFS(int u) {
     vs[u] = true;
-    FOR(i, 1, n)
-    {
+    FOR(i, 1, n) {
         if (!vs[i] && a[u][i])
             DFS(i);
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> n >> m;
         memset(a, 0, sizeof(a));
-        REP(i, m)
-        {
+        REP(i, m) {
             int x, y;
             cin >> x >> y;
             a[x][y] = 1;
         }
         int ok = 0;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             memset(vs, false, sizeof(vs));
             DFS(i);
-            FOR(j, 1, n)
-            {
-                if (!vs[j])
-                {
+            FOR(j, 1, n) {
+                if (!vs[j]) {
                     ok = 1;
                     break;
                 }
