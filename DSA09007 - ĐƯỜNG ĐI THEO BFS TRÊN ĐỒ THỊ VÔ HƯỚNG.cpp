@@ -20,47 +20,39 @@ vi dsk[1005];
 bool vs[1005];
 string res;
 int ok;
-void BFS(int u, string s)
-{
+void BFS(int u, string s) {
     queue<pair<int, string>> qe;
     qe.push({u, s});
     vs[u] = true;
-    while (!qe.empty())
-    {
+    while (!qe.empty()) {
         int x = qe.front().fi;
         string tmp = qe.front().se;
         qe.pop();
-        if (x == t)
-        {
+        if (x == t) {
             res = tmp;
             ok = 0;
             break;
         }
-        for (auto i : dsk[x])
-        {
-            if (!vs[i])
-            {
+        for (auto i : dsk[x]) {
+            if (!vs[i]) {
                 qe.push({i, tmp + " " + to_string(i)});
                 vs[i] = true;
             }
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> v >> e >> s >> t;
         REP(i, 1005)
         dsk[i].clear();
         memset(vs, false, sizeof(vs));
-        REP(i, e)
-        {
+        REP(i, e) {
             int x, y;
             cin >> x >> y;
             dsk[x].pb(y);
