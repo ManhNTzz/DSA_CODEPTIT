@@ -18,22 +18,17 @@ const long long mod = 1000000007;
 vector<int> dsk[1005];
 bool vs[1005];
 int v, e;
-void DFS(int u)
-{
+void DFS(int u) {
     vs[u] = true;
-    for (auto i : dsk[u])
-    {
-        if (!vs[i])
-        {
+    for (auto i : dsk[u]) {
+        if (!vs[i]) {
             DFS(i);
         }
     }
 }
-int demtplt()
-{
+int demtplt() {
     int cnt = 0;
-    FOR(i, 1, v)
-    {
+    FOR(i, 1, v) {
         if (vs[i])
             continue;
         DFS(i);
@@ -41,8 +36,7 @@ int demtplt()
     }
     return cnt;
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -54,16 +48,14 @@ int main()
         memset(vs, false, sizeof(vs));
         REP(i, 1005)
         dsk[i].clear();
-        REP(i, e)
-        {
+        REP(i, e) {
             int x, y;
             cin >> x >> y;
             dsk[x].pb(y);
             dsk[y].pb(x);
         }
         int dem = demtplt();
-        FOR(i, 1, v)
-        {
+        FOR(i, 1, v) {
             memset(vs, false, sizeof(vs));
             vs[i] = true;
             if (dem < demtplt())
