@@ -19,43 +19,36 @@ const long long mod = 1000000007;
 const int INF = 1e9;
 int parent[1005];
 int n, m;
-int Find(int v)
-{
+int Find(int v) {
 	if (v == parent[v])
 		return v;
 	return parent[v] = Find(parent[v]);
 }
-bool Union(int u, int v)
-{
+bool Union(int u, int v) {
 	u = Find(u);
 	v = Find(v);
-	if (u != v)
-	{
+	if (u != v) {
 		parent[v] = u;
 		return true;
 	}
 	return false;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> m;
 		int ok = 0;
 
 		FOR(i, 1, n)
 		parent[i] = i;
-		REP(i, m)
-		{
+		REP(i, m) {
 			int x, y;
 			cin >> x >> y;
-			if (!Union(x, y))
-			{
+			if (!Union(x, y)) {
 				ok = 1;
 			}
 		}
