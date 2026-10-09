@@ -15,31 +15,26 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int v, e;
         cin >> v >> e;
         int vao[105] = {0};
         int ra[105] = {0};
-        REP(i, e)
-        {
+        REP(i, e) {
             int x, y;
             cin >> x >> y;
             vao[y]++;
             ra[x]++;
         }
         int check = 0;
-        FOR(i, 1, v)
-        {
-            if (vao[i] != ra[i])
-            {
+        FOR(i, 1, v) {
+            if (vao[i] != ra[i]) {
                 check = 1;
                 break;
             }
