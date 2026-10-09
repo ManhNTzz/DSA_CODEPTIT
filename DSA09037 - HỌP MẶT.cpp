@@ -20,18 +20,15 @@ int k, n, m, a[1000];
 bool vis[1001];
 vector<int> dske[1001];
 
-void DFS(int u)
-{
+void DFS(int u) {
     vis[u] = true;
-    for (int v : dske[u])
-    {
+    for (int v : dske[u]) {
         if (!vis[v])
             DFS(v);
     }
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -39,8 +36,7 @@ int main()
     for (int i = 0; i < k; i++)
         cin >> a[i];
 
-    for (int i = 1; i <= m; i++)
-    {
+    for (int i = 1; i <= m; i++) {
         int x, y;
         cin >> x >> y;
         dske[x].push_back(y);
@@ -48,8 +44,7 @@ int main()
 
     int ans = 0;
 
-    for (int i = 1; i <= n; i++)
-    {
+    for (int i = 1; i <= n; i++) {
         memset(vis, false, sizeof(vis));
         DFS(i);
 
