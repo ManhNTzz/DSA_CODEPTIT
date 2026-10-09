@@ -21,41 +21,34 @@ int parent[100005];
 int n, m;
 int res;
 int sz[100005];
-int Find(int v)
-{
+int Find(int v) {
 	if (v == parent[v])
 		return v;
 	return parent[v] = Find(parent[v]);
 }
-void Union(int u, int v)
-{
+void Union(int u, int v) {
 	u = Find(u);
 	v = Find(v);
-	if (u != v)
-	{
+	if (u != v) {
 		parent[v] = u;
 		sz[u] += sz[v];
 		res = max(res, sz[u]);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> m;
-		FOR(i, 1, n)
-		{
+		FOR(i, 1, n) {
 			parent[i] = i;
 			sz[i] = 1;
 		}
 		res = 1;
-		REP(i, m)
-		{
+		REP(i, m) {
 			int x, y;
 			cin >> x >> y;
 			Union(x, y);
