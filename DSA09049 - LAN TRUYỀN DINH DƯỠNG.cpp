@@ -21,8 +21,7 @@ vector<vector<int>> dske(200001);
 vector<ll> dp(200001, 0);
 vector<ll> M(200001, 0);
 
-ll DFS(int u)
-{
+ll DFS(int u) {
     ll sum = 1;
     for (int v : dske[u])
         sum += DFS(v);
@@ -30,8 +29,7 @@ ll DFS(int u)
     return sum;
 }
 
-ll DFS2(int u)
-{
+ll DFS2(int u) {
     ll sum = 1;
     for (int v : dske[u])
         sum += DFS2(v) + dp[v];
@@ -39,15 +37,13 @@ ll DFS2(int u)
     return sum;
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     cin >> n;
 
-    for (int i = 2; i <= n; i++)
-    {
+    for (int i = 2; i <= n; i++) {
         int j;
         cin >> j;
         dske[j].push_back(i);
