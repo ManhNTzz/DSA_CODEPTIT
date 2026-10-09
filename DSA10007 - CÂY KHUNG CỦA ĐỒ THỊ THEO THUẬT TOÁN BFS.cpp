@@ -21,22 +21,18 @@ int V, E, st;
 vector<int> dske[1005];
 bool vis[1005];
 
-void BFS(int u, vector<pair<int, int>> &res)
-{
+void BFS(int u, vector<pair<int, int>> &res) {
     queue<int> qe;
     qe.push(st);
 
     vis[st] = true;
 
-    while (!qe.empty())
-    {
+    while (!qe.empty()) {
         int u = qe.front();
         qe.pop();
 
-        for (int v : dske[u])
-        {
-            if (!vis[v])
-            {
+        for (int v : dske[u]) {
+            if (!vis[v]) {
                 res.push_back({u, v});
                 qe.push(v);
                 vis[v] = true;
@@ -45,22 +41,19 @@ void BFS(int u, vector<pair<int, int>> &res)
     }
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         cin >> V >> E >> st;
 
         for (int i = 1; i <= V; i++)
             dske[i].clear();
 
-        for (int i = 1; i <= E; i++)
-        {
+        for (int i = 1; i <= E; i++) {
             int x, y;
             cin >> x >> y;
             dske[x].push_back(y);
@@ -71,8 +64,7 @@ int main()
         vector<pair<int, int>> res;
         BFS(st, res);
 
-        if (res.size() == V - 1)
-        {
+        if (res.size() == V - 1) {
             for (auto v : res)
                 cout << v.fi << " " << v.se << endl;
         }
