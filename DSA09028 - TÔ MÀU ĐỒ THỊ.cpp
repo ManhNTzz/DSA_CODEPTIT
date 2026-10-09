@@ -20,23 +20,18 @@ const int INF = 1e9;
 int n, m, p;
 int a[105][105];
 int mau[105];
-bool check(int u, int c)
-{
-	FOR(i, 1, n)
-	{
+bool check(int u, int c) {
+	FOR(i, 1, n) {
 		if (a[u][i] && mau[i] == c)
 			return false;
 	}
 	return true;
 }
-bool Try(int i)
-{
+bool Try(int i) {
 	if (i > n)
 		return true;
-	FOR(j, 1, p)
-	{
-		if (check(i, j))
-		{
+	FOR(j, 1, p) {
+		if (check(i, j)) {
 			mau[i] = j;
 			if (Try(i + 1))
 				return true;
@@ -45,20 +40,17 @@ bool Try(int i)
 	}
 	return false;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		memset(a, 0, sizeof(a));
 		memset(mau, 0, sizeof(mau));
 		cin >> n >> m >> p;
-		REP(i, m)
-		{
+		REP(i, m) {
 			int x, y;
 			cin >> x >> y;
 			a[x][y] = a[y][x] = 1;
