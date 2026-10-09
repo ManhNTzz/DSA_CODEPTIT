@@ -21,18 +21,15 @@ int parent[100005];
 int sz[100005];
 int canh[100005];
 int n, m;
-int Find(int v)
-{
+int Find(int v) {
 	if (v == parent[v])
 		return v;
 	return parent[v] = Find(parent[v]);
 }
-void Union(int u, int v)
-{
+void Union(int u, int v) {
 	u = Find(u);
 	v = Find(v);
-	if (u != v)
-	{
+	if (u != v) {
 		parent[v] = u;
 		sz[u] += sz[v];
 		canh[u] += canh[v] + 1;
@@ -40,37 +37,30 @@ void Union(int u, int v)
 	else
 		canh[u]++;
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n >> m;
-		FOR(i, 1, n)
-		{
+		FOR(i, 1, n) {
 			parent[i] = i;
 			sz[i] = 1;
 			canh[i] = 0;
 		}
 		int ok = 0;
-		REP(i, m)
-		{
+		REP(i, m) {
 			int x, y;
 			cin >> x >> y;
 			Union(x, y);
 		}
-		FOR(i, 1, n)
-		{
-			if (i == Find(i))
-			{
+		FOR(i, 1, n) {
+			if (i == Find(i)) {
 				ll k = sz[i];
 				ll socanh = (k * (k - 1)) / 2;
-				if (canh[i] != socanh)
-				{
+				if (canh[i] != socanh) {
 					ok = 1;
 					break;
 				}
