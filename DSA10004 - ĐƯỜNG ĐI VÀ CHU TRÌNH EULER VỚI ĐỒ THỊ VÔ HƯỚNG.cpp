@@ -15,28 +15,24 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n, m;
         cin >> n >> m;
         int bac[105] = {0};
-        REP(i, m)
-        {
+        REP(i, m) {
             int x, y;
             cin >> x >> y;
             bac[x]++;
             bac[y]++;
         }
         int dem = 0;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             if (bac[i] % 2 == 1)
                 dem++;
         }
