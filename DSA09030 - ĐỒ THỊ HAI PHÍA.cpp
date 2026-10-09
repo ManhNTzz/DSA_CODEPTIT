@@ -21,21 +21,17 @@ int V, E;
 int colors[maxn];
 vector<int> dske[maxn];
 
-bool BFS(int st)
-{
+bool BFS(int st) {
 	queue<int> qe;
 	qe.push(st);
 
 	colors[st] = 0;
-	while (!qe.empty())
-	{
+	while (!qe.empty()) {
 		int u = qe.front();
 		qe.pop();
 
-		for (int v : dske[u])
-		{
-			if (colors[v] == -1)
-			{
+		for (int v : dske[u]) {
+			if (colors[v] == -1) {
 				colors[v] = 1 - colors[u];
 				qe.push(v);
 			}
@@ -46,13 +42,10 @@ bool BFS(int st)
 	return true;
 }
 
-bool check()
-{
+bool check() {
 	fill(colors, colors + maxn, -1);
-	for (int i = 1; i <= V; i++)
-	{
-		if (colors[i] == -1)
-		{
+	for (int i = 1; i <= V; i++) {
+		if (colors[i] == -1) {
 			if (!BFS(i))
 				return false;
 		}
@@ -60,22 +53,19 @@ bool check()
 	return true;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		for (int i = 1; i < maxn; i++)
 			dske[i].clear();
 
 		cin >> V >> E;
 
-		for (int i = 1; i <= E; i++)
-		{
+		for (int i = 1; i <= E; i++) {
 			int x, y;
 			cin >> x >> y;
 			dske[x].push_back(y);
