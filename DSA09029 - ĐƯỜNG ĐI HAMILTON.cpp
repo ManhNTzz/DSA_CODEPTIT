@@ -22,20 +22,16 @@ vector<int> dske[maxn];
 bool vis[maxn] = {};
 bool check = false;
 
-void DFS(int u, int cnt)
-{
+void DFS(int u, int cnt) {
 	if (check)
 		return;
-	if (cnt == V)
-	{
+	if (cnt == V) {
 		check = true;
 		return;
 	}
 
-	for (int v : dske[u])
-	{
-		if (!vis[v])
-		{
+	for (int v : dske[u]) {
+		if (!vis[v]) {
 			vis[v] = true;
 			DFS(v, cnt + 1);
 			vis[v] = false;
@@ -43,10 +39,8 @@ void DFS(int u, int cnt)
 	}
 }
 
-void check_Hamilton()
-{
-	for (int i = 1; i <= V; i++)
-	{
+void check_Hamilton() {
+	for (int i = 1; i <= V; i++) {
 		memset(vis, false, sizeof(vis));
 		vis[i] = true;
 		DFS(i, 1);
@@ -54,22 +48,19 @@ void check_Hamilton()
 	cout << check << endl;
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		for (int i = 1; i < maxn; i++)
 			dske[i].clear();
 		check = false;
 
 		cin >> V >> E;
-		for (int i = 1; i <= E; i++)
-		{
+		for (int i = 1; i <= E; i++) {
 			int x, y;
 			cin >> x >> y;
 			dske[x].push_back(y);
