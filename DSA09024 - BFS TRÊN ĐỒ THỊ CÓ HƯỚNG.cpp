@@ -17,42 +17,35 @@ const long long mod = 1000000007;
 
 vector<int> dsk[1005];
 bool vs[1005];
-void BFS(int u)
-{
+void BFS(int u) {
     queue<int> qe;
     qe.push(u);
     vs[u] = true;
-    while (!qe.empty())
-    {
+    while (!qe.empty()) {
         int x = qe.front();
         qe.pop();
         cout << x << " ";
-        for (auto i : dsk[x])
-        {
-            if (!vs[i])
-            {
+        for (auto i : dsk[x]) {
+            if (!vs[i]) {
                 qe.push(i);
                 vs[i] = true;
             }
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int v, e, u;
         cin >> v >> e >> u;
         REP(i, 1005)
         dsk[i].clear();
         memset(vs, false, sizeof(vs));
-        REP(i, e)
-        {
+        REP(i, e) {
             int x, y;
             cin >> x >> y;
             dsk[x].pb(y);
