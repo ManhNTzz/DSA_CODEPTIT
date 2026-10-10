@@ -17,22 +17,18 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		string s;
 		cin >> s;
 		stack<string> st;
-		for (auto c : s)
-		{
-			if (c == '+' || c == '-' || c == '*' || c == '/')
-			{
+		for (auto c : s) {
+			if (c == '+' || c == '-' || c == '*' || c == '/') {
 				string a = st.top();
 				st.pop();
 				string b = st.top();
