@@ -17,20 +17,17 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
     int val;
     Node *l;
     Node *r;
-    Node(int x)
-    {
+    Node(int x) {
         val = x;
         l = r = nullptr;
     }
 };
-void Khoiphuc(Node *&c, vector<int> &a, vector<int> &b)
-{
+void Khoiphuc(Node *&c, vector<int> &a, vector<int> &b) {
     if (a.empty() || b.empty())
         return;
     c = new Node(b[0]);
@@ -44,23 +41,20 @@ void Khoiphuc(Node *&c, vector<int> &a, vector<int> &b)
     vector<int> b2(b.begin() + i + 1, b.end());
     Khoiphuc(c->r, a2, b2);
 }
-void Postorder(Node *node)
-{
+void Postorder(Node *node) {
     if (node == nullptr)
         return;
     Postorder(node->l);
     Postorder(node->r);
     cout << node->val << " ";
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n), b(n);
