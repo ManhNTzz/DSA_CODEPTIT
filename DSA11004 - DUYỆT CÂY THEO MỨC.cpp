@@ -17,41 +17,34 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
 	int val;
 	Node *r;
 	Node *l;
-	Node(int x)
-	{
+	Node(int x) {
 		val = x;
 		r = l = nullptr;
 	}
 };
-void chen(Node *&root, int n1, int n2, char c)
-{
+void chen(Node *&root, int n1, int n2, char c) {
 	if (root == nullptr)
 		return;
-	if (root->val == n1)
-	{
+	if (root->val == n1) {
 		if (c == 'L')
 			root->l = new Node(n2);
 		else
 			root->r = new Node(n2);
 	}
-	else
-	{
+	else {
 		chen(root->l, n1, n2, c);
 		chen(root->r, n1, n2, c);
 	}
 }
-void LO(Node *root)
-{
+void LO(Node *root) {
 	queue<Node *> qe;
 	qe.push(root);
-	while (!qe.empty())
-	{
+	while (!qe.empty()) {
 		Node *node = qe.front();
 		qe.pop();
 		cout << node->val << " ";
@@ -61,25 +54,21 @@ void LO(Node *root)
 			qe.push(node->r);
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n;
 		cin >> n;
 		Node *root = nullptr;
-		FOR(i, 1, n)
-		{
+		FOR(i, 1, n) {
 			int n1, n2;
 			char c;
 			cin >> n1 >> n2 >> c;
-			if (root == nullptr)
-			{
+			if (root == nullptr) {
 				root = new Node(n1);
 				if (c == 'L')
 					root->l = new Node(n2);
