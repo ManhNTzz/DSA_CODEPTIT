@@ -19,8 +19,7 @@ const long long mod = 1000000007;
 const int INF = 1e9;
 int n;
 string tree[100005];
-ll tinh(int i)
-{
+ll tinh(int i) {
 	if (i > n)
 		return 0;
 	if (tree[i] == "+")
@@ -33,15 +32,13 @@ ll tinh(int i)
 		return tinh(2 * i) / tinh(2 * i + 1);
 	return stoll(tree[i]);
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n;
 		FOR(i, 1, n)
 		cin >> tree[i];
