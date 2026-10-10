@@ -19,57 +19,48 @@ const long long mod = 1000000007;
 const int INF = 1e9;
 int n, m;
 int parent[10005];
-struct Edge
-{
+struct Edge {
     int u, v, w;
 };
 vector<Edge> T;
-int Find(int v)
-{
+int Find(int v) {
     if (v == parent[v])
         return v;
     return parent[v] = Find(parent[v]);
 }
-bool Union(int u, int v)
-{
+bool Union(int u, int v) {
     u = Find(u);
     v = Find(v);
-    if (u != v)
-    {
+    if (u != v) {
         parent[v] = u;
         return true;
     }
     return false;
 }
-bool cmp(Edge a, Edge b)
-{
+bool cmp(Edge a, Edge b) {
     if (a.w == b.w && a.u == b.u)
         return a.v < b.v;
     else if (a.w == b.w)
         return a.u < b.u;
     return a.w < b.w;
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         cin >> n >> m;
         int WT = 0;
         FOR(i, 1, n)
         parent[i] = i;
         T.resize(m);
-        REP(i, m)
-        {
+        REP(i, m) {
             cin >> T[i].u >> T[i].v >> T[i].w;
         }
         sort(ALL(T), cmp);
-        REP(i, m)
-        {
+        REP(i, m) {
             if (Union(T[i].u, T[i].v))
                 WT += T[i].w;
         }
