@@ -17,46 +17,38 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
     int val;
     Node *r;
     Node *l;
-    Node(int x)
-    {
+    Node(int x) {
         val = x;
         r = l = nullptr;
     }
 };
-void kp(Node *&root, int n1, int n2, char c)
-{
+void kp(Node *&root, int n1, int n2, char c) {
     if (root == nullptr)
         return;
-    if (root->val == n1)
-    {
+    if (root->val == n1) {
         if (c == 'L')
             root->l = new Node(n2);
         else
             root->r = new Node(n2);
     }
-    else
-    {
+    else {
         kp(root->l, n1, n2, c);
         kp(root->r, n1, n2, c);
     }
 }
-void DXO(Node *&root)
-{
+void DXO(Node *&root) {
     if (root == nullptr)
         return;
     stack<Node *> s1;
     stack<Node *> s2;
     s1.push(root);
-    while (!s1.empty() || !s2.empty())
-    {
-        while (!s1.empty())
-        {
+    while (!s1.empty() || !s2.empty()) {
+        while (!s1.empty()) {
             Node *node = s1.top();
             s1.pop();
             cout << node->val << " ";
@@ -65,8 +57,7 @@ void DXO(Node *&root)
             if (node->l != nullptr)
                 s2.push(node->l);
         }
-        while (!s2.empty())
-        {
+        while (!s2.empty()) {
             Node *node = s2.top();
             s2.pop();
             cout << node->val << " ";
@@ -77,25 +68,21 @@ void DXO(Node *&root)
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         Node *root = nullptr;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             int n1, n2;
             char c;
             cin >> n1 >> n2 >> c;
-            if (root == nullptr)
-            {
+            if (root == nullptr) {
                 root = new Node(n1);
                 if (c == 'L')
                     root->l = new Node(n2);
