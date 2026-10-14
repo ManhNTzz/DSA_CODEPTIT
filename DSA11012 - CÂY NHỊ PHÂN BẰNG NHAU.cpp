@@ -17,8 +17,7 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
     int val;
     Node *r;
@@ -29,33 +28,27 @@ public:
         r = l = nullptr;
     }
 };
-void kp(Node *&root, int n1, int n2, char c)
-{
+void kp(Node *&root, int n1, int n2, char c) {
     if (root == nullptr)
         return;
-    if (root->val == n1)
-    {
+    if (root->val == n1) {
         if (c == 'L')
             root->l = new Node(n2);
         else
             root->r = new Node(n2);
     }
-    else
-    {
+    else {
         kp(root->l, n1, n2, c);
         kp(root->r, n1, n2, c);
     }
 }
-Node *taocay(int n)
-{
+Node *taocay(int n) {
     Node *root = nullptr;
-    FOR(i, 1, n)
-    {
+    FOR(i, 1, n) {
         int n1, n2;
         char c;
         cin >> n1 >> n2 >> c;
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             root = new Node(n1);
             if (c == 'L')
                 root->l = new Node(n2);
@@ -67,8 +60,7 @@ Node *taocay(int n)
     }
     return root;
 }
-bool kt(Node *a, Node *b)
-{
+bool kt(Node *a, Node *b) {
     if (a == nullptr && b == nullptr)
         return true;
     if (a == nullptr || b == nullptr)
@@ -77,15 +69,13 @@ bool kt(Node *a, Node *b)
         return false;
     return kt(a->l, b->l) && kt(a->r, b->r);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n1;
         cin >> n1;
         Node *node1 = taocay(n1);
