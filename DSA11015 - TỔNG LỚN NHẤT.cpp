@@ -3,36 +3,29 @@ using namespace std;
 
 // Cre by ManhNTzz
 
-class Node
-{
+class Node {
 public:
     int val;
     Node *left;
     Node *right;
-    Node()
-    {
+    Node() {
         val = 0;
         left = right = nullptr;
     }
-    Node(int x)
-    {
+    Node(int x) {
         val = x;
         left = right = nullptr;
     }
 };
 
-void KhoiPhuc(Node *&root, vector<string> &a, int i)
-{
+void KhoiPhuc(Node *&root, vector<string> &a, int i) {
     if (!root)
         return;
-    if (root->val == stoi(a[i]))
-    {
-        if (a[i + 2] == "L")
-        {
+    if (root->val == stoi(a[i])) {
+        if (a[i + 2] == "L") {
             root->left = new Node(stoi(a[i + 1]));
         }
-        else if (a[i + 2] == "R")
-        {
+        else if (a[i + 2] == "R") {
             root->right = new Node(stoi(a[i + 1]));
         }
         return;
@@ -43,8 +36,7 @@ void KhoiPhuc(Node *&root, vector<string> &a, int i)
         KhoiPhuc(root->right, a, i);
 }
 
-int findMaxPathSum(Node *root, int &maxSum)
-{
+int findMaxPathSum(Node *root, int &maxSum) {
     if (!root)
         return 0;
 
@@ -52,8 +44,7 @@ int findMaxPathSum(Node *root, int &maxSum)
     int rightSum = findMaxPathSum(root->right, maxSum);
 
     // Cập nhật maxSum nếu cả hai con tồn tại
-    if (root->left && root->right)
-    {
+    if (root->left && root->right) {
         maxSum = max(maxSum, leftSum + rightSum + root->val);
         return max(leftSum, rightSum) + root->val;
     }
@@ -62,23 +53,20 @@ int findMaxPathSum(Node *root, int &maxSum)
     return (root->left ? leftSum : rightSum) + root->val;
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<string> a(3 * n);
         for (string &x : a)
             cin >> x;
         Node *root = new Node(stoi(a[0]));
-        for (int i = 0; i < a.size(); i += 3)
-        {
+        for (int i = 0; i < a.size(); i += 3) {
             KhoiPhuc(root, a, i);
         }
         int ans = -1e9;
