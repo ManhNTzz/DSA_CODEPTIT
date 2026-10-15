@@ -17,22 +17,18 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
     int val;
     Node *r;
     Node *l;
-    Node(int x)
-    {
+    Node(int x) {
         val = x;
         r = l = nullptr;
     }
 };
-void chen(Node *&root, int n)
-{
-    if (root == nullptr)
-    {
+void chen(Node *&root, int n) {
+    if (root == nullptr) {
         root = new Node(n);
         return;
     }
@@ -41,28 +37,24 @@ void chen(Node *&root, int n)
     else
         chen(root->r, n);
 }
-void PRO(Node *&root)
-{
+void PRO(Node *&root) {
     if (root == nullptr)
         return;
     cout << root->val << " ";
     PRO(root->l);
     PRO(root->r);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         Node *root = nullptr;
-        FOR(i, 1, n)
-        {
+        FOR(i, 1, n) {
             int x;
             cin >> x;
             chen(root, x);
