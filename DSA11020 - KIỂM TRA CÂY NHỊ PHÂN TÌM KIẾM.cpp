@@ -17,15 +17,13 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
@@ -33,8 +31,7 @@ int main()
         cin >> a[i];
         int ok = 0;
         REP(i, n - 1)
-        if (a[i] >= a[i + 1])
-        {
+        if (a[i] >= a[i + 1]) {
             ok = 1;
             break;
         }
