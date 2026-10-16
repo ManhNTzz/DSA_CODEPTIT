@@ -16,20 +16,17 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<vector<int>> dske(n + 1);
-        for (int i = 0; i < n - 1; i++)
-        {
+        for (int i = 0; i < n - 1; i++) {
             int x, y;
             cin >> x >> y;
             dske[x].push_back(y);
@@ -39,8 +36,7 @@ int main()
         qe.push({1, 0});
 
         int ans = 0;
-        while (!qe.empty())
-        {
+        while (!qe.empty()) {
             auto [u, h] = qe.front();
             qe.pop();
 
