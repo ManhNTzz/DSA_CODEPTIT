@@ -16,23 +16,19 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void Try(int i, vector<int> &a, int Sum, int cnt, int &ans)
-{
-	if (Sum <= 0)
-	{
+void Try(int i, vector<int> &a, int Sum, int cnt, int &ans) {
+	if (Sum <= 0) {
 		if (Sum == 0)
 			ans = min(ans, cnt);
 		return;
 	}
 
-	for (int j = i + 1; j < a.size(); j++)
-	{
+	for (int j = i + 1; j < a.size(); j++) {
 		Try(j, a, Sum - a[j], cnt + 1, ans);
 	}
 }
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
