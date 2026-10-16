@@ -16,15 +16,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		int n, W;
 		cin >> n >> W;
 		vector<pair<int, int>> a(n);
@@ -33,10 +31,8 @@ int main()
 		for (int i = 0; i < n; i++)
 			cin >> a[i].second;
 		vector<int> dp(W + 1, 0);
-		for (int i = 0; i < n; i++)
-		{
-			for (int j = W; j >= a[i].first; j--)
-			{
+		for (int i = 0; i < n; i++) {
+			for (int j = W; j >= a[i].first; j--) {
 				dp[j] = max(dp[j], dp[j - a[i].first] + a[i].second);
 			}
 		}
