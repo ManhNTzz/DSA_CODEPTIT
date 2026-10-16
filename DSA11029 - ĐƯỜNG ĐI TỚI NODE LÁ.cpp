@@ -16,37 +16,31 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-void DFS(int u, vector<int> path, vector<vector<int>> &dske, vector<vector<int>> &res)
-{
-    if (dske[u].size() == 0)
-    {
+void DFS(int u, vector<int> path, vector<vector<int>> &dske, vector<vector<int>> &res) {
+    if (dske[u].size() == 0) {
         res.push_back(path);
         return;
     }
 
-    for (int v : dske[u])
-    {
+    for (int v : dske[u]) {
         path.push_back(v);
         DFS(v, path, dske, res);
         path.pop_back();
     }
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
 
         vector<vector<int>> dske(n + 1);
-        for (int i = 1; i <= n - 1; i++)
-        {
+        for (int i = 1; i <= n - 1; i++) {
             int x, y;
             cin >> x >> y;
             dske[x].push_back(y);
@@ -58,8 +52,7 @@ int main()
         sort(res.begin(), res.end(), [](auto v, auto t) -> bool
              { return v[v.size() - 1] < t[t.size() - 1]; });
 
-        for (auto v : res)
-        {
+        for (auto v : res) {
             for (int x : v)
                 cout << x << " ";
             cout << endl;
