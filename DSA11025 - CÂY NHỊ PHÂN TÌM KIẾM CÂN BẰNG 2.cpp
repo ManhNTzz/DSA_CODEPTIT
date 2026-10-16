@@ -17,20 +17,17 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 const int INF = 1e9;
-class Node
-{
+class Node {
 public:
     int val;
     Node *r;
     Node *l;
-    Node(int x)
-    {
+    Node(int x) {
         val = x;
         r = l = nullptr;
     }
 };
-void kp(Node *&root, vector<int> &a, int l, int r)
-{
+void kp(Node *&root, vector<int> &a, int l, int r) {
     if (l > r)
         return;
     int mid = (l + r) / 2;
@@ -38,23 +35,20 @@ void kp(Node *&root, vector<int> &a, int l, int r)
     kp(root->l, a, l, mid - 1);
     kp(root->r, a, mid + 1, r);
 }
-void PO(Node *&root)
-{
+void PO(Node *&root) {
     if (root == nullptr)
         return;
     cout << root->val << " ";
     PO(root->l);
     PO(root->r);
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<int> a(n);
