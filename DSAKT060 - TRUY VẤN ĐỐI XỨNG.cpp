@@ -16,8 +16,7 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
@@ -25,20 +24,17 @@ int main()
     cin >> s;
     int q;
     cin >> q;
-    while (q--)
-    {
+    while (q--) {
         char c;
         cin >> c;
-        if (c == 'q')
-        {
+        if (c == 'q') {
             int l, r;
             cin >> l >> r;
             string t = s;
             reverse(t.begin() + l - 1, t.begin() + r);
             cout << (s == t ? "YES" : "NO") << endl;
         }
-        else
-        {
+        else {
             int i;
             cin >> i;
             char a;
