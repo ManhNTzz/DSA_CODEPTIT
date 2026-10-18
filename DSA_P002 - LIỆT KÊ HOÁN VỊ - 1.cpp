@@ -21,16 +21,12 @@ int n;
 int a[105];
 bool vs[105];
 int dem = 1;
-void Try(int i)
-{
-    FOR(j, 1, n)
-    {
-        if (!vs[j])
-        {
+void Try(int i) {
+    FOR(j, 1, n) {
+        if (!vs[j]) {
             vs[j] = true;
             a[i] = j;
-            if (i == n)
-            {
+            if (i == n) {
                 cout << dem << ": ";
                 FOR(i, 1, n)
                 cout << a[i] << " ";
@@ -43,8 +39,7 @@ void Try(int i)
         }
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
