@@ -21,17 +21,13 @@ int n;
 int a[105], b[105], c[105];
 int d[105][105];
 int res, pos;
-void Try(int i)
-{
-	if (i > 8)
-	{
+void Try(int i) {
+	if (i > 8) {
 		res = max(res, pos);
 		return;
 	}
-	FOR(j, 1, 8)
-	{
-		if (!a[j] && !b[i + j - 1] && !c[i - j + 8])
-		{
+	FOR(j, 1, 8) {
+		if (!a[j] && !b[i + j - 1] && !c[i - j + 8]) {
 			a[j] = b[i + j - 1] = c[i - j + 8] = 1;
 			pos += d[i][j];
 			Try(i + 1);
@@ -40,15 +36,13 @@ void Try(int i)
 		}
 	}
 }
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int T;
 	cin >> T;
-	FOR(c, 1, T)
-	{
+	FOR(c, 1, T) {
 		FOR(i, 1, 8)
 		FOR(j, 1, 8)
 		cin >> d[i][j];
