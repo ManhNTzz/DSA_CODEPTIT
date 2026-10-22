@@ -19,31 +19,24 @@ const int INF = 1e9;
 
 int n, k;
 int a[105];
-int snt(int n)
-{
+int snt(int n) {
     if (n <= 1)
         return 0;
-    for (int i = 2; i * i <= n; i++)
-    {
+    for (int i = 2; i * i <= n; i++) {
         if (n % i == 0)
             return 0;
     }
     return 1;
 }
 int dem = 0;
-void Try(int i)
-{
-    for (int j = a[i - 1] + 1; j <= n - k + i; j++)
-    {
+void Try(int i) {
+    for (int j = a[i - 1] + 1; j <= n - k + i; j++) {
         a[i] = j;
-        if (i == k)
-        {
+        if (i == k) {
             dem++;
-            if (snt(dem))
-            {
+            if (snt(dem)) {
                 cout << dem << ": ";
-                FOR(i, 1, k)
-                {
+                FOR(i, 1, k) {
                     cout << a[i] << " ";
                 }
                 cout << endl;
@@ -53,8 +46,7 @@ void Try(int i)
             Try(i + 1);
     }
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
