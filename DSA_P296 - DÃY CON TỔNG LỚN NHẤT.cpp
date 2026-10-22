@@ -15,16 +15,14 @@ const long long MOD = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 	int n, q;
 	cin >> n >> q;
 	vector<ll> pref(n + 1, 0);
-	FOR(i, 1, n)
-	{
+	FOR(i, 1, n) {
 		ll x;
 		cin >> x;
 		pref[i] = pref[i - 1];
@@ -32,8 +30,7 @@ int main()
 			pref[i] += x;
 	}
 
-	while (q--)
-	{
+	while (q--) {
 		int l, r;
 		cin >> l >> r;
 		cout << pref[r] - pref[l - 1] << endl;
