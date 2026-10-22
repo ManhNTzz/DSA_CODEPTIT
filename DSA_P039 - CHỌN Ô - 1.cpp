@@ -14,15 +14,13 @@ const long long NEG_INF = -1e18;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int n;
         cin >> n;
         vector<vector<long long>> a(n, vector<long long>(n));
@@ -32,15 +30,12 @@ int main()
         int maxMask = 1 << n;
         vector<long long> dp(maxMask, NEG_INF);
         dp[0] = 0;
-        for (int mask = 0; mask < maxMask; mask++)
-        {
+        for (int mask = 0; mask < maxMask; mask++) {
             int row = __builtin_popcount(mask); // đang xét hàng row
             if (row >= n)
                 continue;
-            for (int col = 0; col < n; col++)
-            {
-                if (!(mask & (1 << col)))
-                {
+            for (int col = 0; col < n; col++) {
+                if (!(mask & (1 << col))) {
                     int newMask = mask | (1 << col);
                     dp[newMask] = max(dp[newMask], dp[mask] + a[row][col]);
                 }
