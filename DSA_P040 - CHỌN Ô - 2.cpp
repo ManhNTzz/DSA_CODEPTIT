@@ -13,15 +13,13 @@ const long long mod = 1000000007;
 
 // Cre by ManhNTzz
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int N;
         cin >> N;
         vector<vector<int>> a(4, vector<int>(N));
@@ -30,8 +28,7 @@ int main()
                 cin >> a[i][j];
         // Tạo mask hợp lệ
         vector<int> valid;
-        for (int mask = 0; mask < (1 << 4); mask++)
-        {
+        for (int mask = 0; mask < (1 << 4); mask++) {
             if ((mask & (mask << 1)) == 0)
                 valid.push_back(mask);
         }
@@ -39,14 +36,11 @@ int main()
         int M = valid.size();
         // precompute giá trị từng mask ở mỗi cột
         vector<vector<ll>> val(N, vector<ll>(M, 0));
-        for (int j = 0; j < N; j++)
-        {
-            for (int i = 0; i < M; i++)
-            {
+        for (int j = 0; j < N; j++) {
+            for (int i = 0; i < M; i++) {
                 int mask = valid[i];
                 ll sum = 0;
-                for (int r = 0; r < 4; r++)
-                {
+                for (int r = 0; r < 4; r++) {
                     if (mask & (1 << r))
                         sum += a[r][j];
                 }
@@ -57,19 +51,14 @@ int main()
         vector<vector<ll>> dp(N, vector<ll>(M, LLONG_MIN));
 
         // cột đầu
-        for (int i = 0; i < M; i++)
-        {
+        for (int i = 0; i < M; i++) {
             dp[0][i] = val[0][i];
         }
         // các cột sau
-        for (int j = 1; j < N; j++)
-        {
-            for (int i = 0; i < M; i++)
-            {
-                for (int k = 0; k < M; k++)
-                {
-                    if ((valid[i] & valid[k]) == 0)
-                    {
+        for (int j = 1; j < N; j++) {
+            for (int i = 0; i < M; i++) {
+                for (int k = 0; k < M; k++) {
+                    if ((valid[i] & valid[k]) == 0) {
                         dp[j][i] = max(dp[j][i], dp[j - 1][k] + val[j][i]);
                     }
                 }
