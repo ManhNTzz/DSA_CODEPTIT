@@ -8,22 +8,17 @@ int c[20][20];
 bool visited[20];
 int x[20];
 int f, fopt, cmin;
-void Try(int k)
-{
-	for (int v = 1; v <= n; v++)
-	{
-		if (!visited[v])
-		{
+void Try(int k) {
+	for (int v = 1; v <= n; v++) {
+		if (!visited[v]) {
 			x[k] = v;
 			visited[v] = true;
 			if (k > 1)
 				f += c[x[k - 1]][v];
-			if (k == n)
-			{
+			if (k == n) {
 				fopt = min(fopt, f);
 			}
-			else if (f + (n - k + 1) * cmin < fopt)
-			{
+			else if (f + (n - k + 1) * cmin < fopt) {
 				Try(k + 1);
 			}
 			if (k > 1)
@@ -32,18 +27,14 @@ void Try(int k)
 		}
 	}
 }
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
-	while (T--)
-	{
+	while (T--) {
 		cin >> n;
 		cmin = INT_MAX;
-		for (int i = 1; i <= n; i++)
-		{
-			for (int j = 1; j <= n; j++)
-			{
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
 				cin >> c[i][j];
 				if (i != j)
 					cmin = min(cmin, c[i][j]);
