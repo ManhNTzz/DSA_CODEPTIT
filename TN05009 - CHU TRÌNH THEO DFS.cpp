@@ -17,47 +17,39 @@ const long long mod = 1000000007;
 // Cre by ManhNTzz
 
 string res;
-bool DFS(vi dsk[], int u, int parent, vb &vs, string s)
-{
+bool DFS(vi dsk[], int u, int parent, vb &vs, string s) {
     vs[u] = true;
-    for (auto i : dsk[u])
-    {
-        if (!vs[i])
-        {
+    for (auto i : dsk[u]) {
+        if (!vs[i]) {
             if (DFS(dsk, i, u, vs, s + " " + to_string(i)))
                 return true;
         }
-        else if (i != parent && i == 1)
-        {
+        else if (i != parent && i == 1) {
             res = s;
             return true;
         }
     }
     return false;
 }
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int T;
     cin >> T;
-    while (T--)
-    {
+    while (T--) {
         int v, e;
         cin >> v >> e;
         vi dsk[v + 10];
         vb vs(v + 10);
-        REP(i, e)
-        {
+        REP(i, e) {
             int x, y;
             cin >> x >> y;
             dsk[x].pb(y);
             dsk[y].pb(x);
         }
         res = "";
-        FOR(i, 1, v)
-        {
+        FOR(i, 1, v) {
             sort(ALL(dsk[i]));
         }
         if (DFS(dsk, 1, -1, vs, "1"))
