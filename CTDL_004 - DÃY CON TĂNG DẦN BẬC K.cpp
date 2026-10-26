@@ -2,7 +2,7 @@
 using namespace std;
 #define REP(i, n) for (int i = 0; i < (n); ++i)
 #define FOR(i, a, b) for (int i = (a); i <= (b); ++i)
-#define FOD(i, a, b) for (int i = (b); i >= (a); --i)
+#define FOD(i, a, b) for (int i = (b); i >= (a); --i) 
 #define ll long long
 #define se second
 #define fi first
