@@ -4,7 +4,7 @@ using namespace std;
 #define FOR(i, a, b) for (int i = (a); i <= (b); ++i)
 #define FOD(i, a, b) for (int i = (b); i >= (a); --i)
 #define ll long long
-#define se second
+#define se second 
 #define fi first
 #define len length()
 #define ALL(s) s.begin(), s.end()
