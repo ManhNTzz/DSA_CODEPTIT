@@ -10,7 +10,7 @@ using namespace std;
 #define ALL(s) s.begin(), s.end()
 #define endl '\n'
 #define maxn 10000007
-
+ 
 // Cre by ManhNTzz
 
 int main(){
