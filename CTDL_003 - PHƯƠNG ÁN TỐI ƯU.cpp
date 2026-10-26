@@ -8,7 +8,7 @@ using namespace std;
 #define fi first
 #define len length()
 #define ALL(s) s.begin(), s.end()
-#define ALLN(s) s.rbegin(), s.rend()
+#define ALLN(s) s.rbegin(), s.rend() 
 #define endl '\n'
 #define maxn 10000007
 
